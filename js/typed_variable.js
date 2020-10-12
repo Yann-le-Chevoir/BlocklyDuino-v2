@@ -36,16 +36,17 @@ var numVariablesCallBack = function (currWorkspace) {
     xmlList.push(createintBtnXml);
     if (allIntVars.length > 0) {
         if (Blockly.Blocks['vars_set_int']) {
-            var firstVariable = allIntVars[allIntVars.length - 1];
-            var gap = 24;
-            var blockText =
-                    '<xml>' +
-                    '<block type="vars_set_int" gap="' + gap + '">' +
-                    '<field name="VAR_SET_INT" variabletype="int">' + firstVariable.name + '</field>' +
-                    '</block>' +
-                    '</xml>';
-            var block = Blockly.Xml.textToDom(blockText).firstChild;
-            xmlList.push(block);
+            //var firstVariable = allIntVars[0];			
+            for (var i = 0, variable; variable = allIntVars[i]; i++) {
+				var blockText =
+						'<xml>' +
+						'<block type="vars_set_int" gap="24">' +
+						'<field name="VAR_SET_INT" variabletype="int">' + variable.name + '</field>' +
+						'</block>' +
+						'</xml>';
+				var block = Blockly.Xml.textToDom(blockText).firstChild;
+				xmlList.push(block);
+			}
         }
         if (Blockly.Blocks['vars_get_int']) {
             allIntVars.sort(Blockly.VariableModel.compareByType);
@@ -61,7 +62,7 @@ var numVariablesCallBack = function (currWorkspace) {
             }
         }
     }
-    var allFloatVars = currWorkspace.getVariablesOfType('float');
+    /*var allFloatVars = currWorkspace.getVariablesOfType('float');
     var createfloatBtnXml = Blockly.Xml.textToDom('<xml><button text="' + Blockly.Msg.VAR_CREATE_FLOAT + '" callbackKey="createVarBtnFloat">' +
             '</button></xml>').firstChild;
     xmlList.push(createfloatBtnXml);
@@ -91,7 +92,7 @@ var numVariablesCallBack = function (currWorkspace) {
                 xmlList.push(block);
             }
         }
-    }
+    }*/
     return xmlList;
 };
 

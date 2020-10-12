@@ -32,30 +32,30 @@ Blockly.Msg.CONTROLS_SWITCH_VAR_TOOLTIP = "Déplacer le bloc de gauche pour l'aj
 Blockly.Msg.CONTROLS_SWITCH_CASEBREAK_TOOLTIP = "Ajoute un bloc de commandes sous condition";
 Blockly.Msg.CONTROLS_SWITCH_DEFAULT_TOOLTIP = "Ajoute un bloc d'actions par défaut";
 //Arduino base cateory blocks
-Blockly.Msg.VAR_CREATE_INT = "de type nombre entier";
+Blockly.Msg.VAR_CREATE_INT = "Nouveau nombre entier";
 Blockly.Msg.VAR_CREATE_FLOAT = "de type nombre à virgule";
 Blockly.Msg.VAR_CREATE_STRING = "de type chaîne de caractère";
 Blockly.Msg.VAR_CREATE_BOOLEAN = "de type booléen";
 Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_HELPURL = "http://arduino.cc/en/Reference/DigitalWrite";
-Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_INPUT = "mettre la DEL sur la carte à l'état logique";
-Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_TOOLTIP = "éteint ou allume la DEL sur la carte Arduino";
-Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_INPUT1 = "mettre la broche";
+Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_INPUT = "Mettre la DEL sur la carte à l'état logique";
+Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_TOOLTIP = "Eteint ou allume la DEL sur la carte Arduino";
+Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_INPUT1 = "Mettre la broche";
 Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_INPUT2 = "à l'état logique";
-Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_TOOLTIP = "écrit une valeur (0 ou 1) sur la broche choisie pour la sortie d'informations logiques";
+Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_TOOLTIP = "Ecrit une valeur (0 ou 1) sur la broche choisie pour la sortie d'informations logiques";
 Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_HELPURL = "http://arduino.cc/en/Reference/DigitalWrite";
-Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT = "l'état logique sur la broche";
-Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_TOOLTIP = "lit la valeur (0 ou 1) sur la broche choisie pour l'entrée d'informations logiques";
+Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_INPUT = "état logique sur la broche";
+Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_TOOLTIP = "Lit la valeur (0 ou 1) sur la broche choisie pour l'entrée d'informations logiques";
 Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_HELPURL = "http://arduino.cc/en/Reference/DigitalRead";
 Blockly.Msg.ARDUINO_INOUT_ONOFF_HELPURL = "http://arduino.cc/en/Reference/Constants";
-Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_INPUT1 = "envoyer sur la broche MLI~ ";
-Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_INPUT2 = "la valeur";
-Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_TOOLTIP = "écrit une valeur (comprise entre 0 et 255) sur la broche choisie pour la sortie d'informations modulées.\nATTENTION à vérifier que la broche choisie porte le signe PWM~ !";
+Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_INPUT1 = "Envoyer sur la broche PWM~ ";
+Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_INPUT2 = "la valeur (0~255)";
+Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_TOOLTIP = "Ecrit une valeur (comprise entre 0 et 255) sur la broche choisie pour la sortie d'informations modulées.\nATTENTION à vérifier que la broche choisie porte le signe PWM~ !";
 Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_HELPURL = "http://arduino.cc/en/Reference/AnalogWrite";
-Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_INPUT = "la valeur lue sur la broche d'entrée Analogique";
-Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_TOOLTIP = "lit la valeur (comprise entre 0 et 1023) sur la broche choisie pour l'entrée d'informations analogiques.\nATTENTION à vérifier que la broche choisie soit de type A# (exemple : A0,A1,...) ";
+Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_INPUT = "valeur analogique sur la broche";
+Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_TOOLTIP = "Lit la valeur (comprise entre 0 et 1023) sur la broche choisie pour l'entrée d'informations analogiques.\nATTENTION à vérifier que la broche choisie soit de type A# (exemple : A0,A1,...) ";
 Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_HELPURL = "http://arduino.cc/en/Reference/AnalogRead";
-Blockly.Msg.ARDUINO_BASE_DELAY_DELAY_TIME = "faire une temporisation (en ms) de";
-Blockly.Msg.ARDUINO_BASE_DELAY_TOOLTIP = "spécifier le temps d'attente, arrête l'exécution du programme pendant la durée indiquée";
+Blockly.Msg.ARDUINO_BASE_DELAY_DELAY_TIME = "Faire une temporisation (en ms) de";
+Blockly.Msg.ARDUINO_BASE_DELAY_TOOLTIP = "Spécifier le temps d'attente, arrête l'exécution du programme pendant la durée indiquée";
 Blockly.Msg.ARDUINO_BASE_DELAY_HELPURL = "http://arduino.cc/en/Reference/delay";
 Blockly.Msg.ARDUINO_BASE_ANGLE = "angle de ";
 Blockly.Msg.ARDUINO_BASE_ANGLE_TOOLTIP = "renvoie une valeur entre 0~180°";
@@ -90,14 +90,53 @@ Blockly.Msg.SERIAL_PRINT_TOOLTIP = "envoie des données sur le port série pour 
 Blockly.Msg.SERIAL_PRINT_HELPURL = "http://www.arduino.cc/en/Serial/Print";
 
 //Arduino base servo category blocks
-Blockly.Msg.SERVO_MOVE_TOOLTIP = "rotation possible entre 0~180 degrés";
+Blockly.Msg.SERVO_MOVE_TOOLTIP = "Rotation possible entre 0~180 degrés";
 Blockly.Msg.SERVO_MOVE_HELPURL = "http://www.arduino.cc/playground/ComponentLib/servo";
 Blockly.Msg.SERVO_PIN = "sur la broche";
-Blockly.Msg.SERVO_MOVE_INPUT = "orienter le servo-moteur";
+Blockly.Msg.SERVO_MOVE_INPUT = "Orienter le servo-moteur";
 Blockly.Msg.SERVO_MOVE_DEGREE = "d'un angle (0~180°) de";
 Blockly.Msg.SERVO_READ_DEGREES_INPUT = "l'angle du servo-moteur";
-Blockly.Msg.SERVO_READ_DEGREES_TOOLTIP = "renvoie le nombre de degrés de la dernière rotation";
+Blockly.Msg.SERVO_READ_DEGREES_TOOLTIP = "Renvoie le nombre de degrés de la dernière rotation";
 Blockly.Msg.SERVO_READ_DEGREES_HELPURL = "http://www.arduino.cc/playground/ComponentLib/servo";
+
+//Virus
+Blockly.Msg.VIRUS_MP3_INIT = "Initialiser le lecteur MP3 🎶";
+Blockly.Msg.VIRUS_MP3_INIT2 = "branché sur les broches (rx)";
+Blockly.Msg.VIRUS_MP3_INIT3 = "et (tx)";
+Blockly.Msg.VIRUS_MP3_INIT_TOOLTIP = "";
+Blockly.Msg.VIRUS_MP3_INIT_HELPURL = "";
+
+Blockly.Msg.VIRUS_MP3_PLAY_FIRST = "Démarrer la première musique 🎵";
+Blockly.Msg.VIRUS_MP3_PLAY_FIRST_TOOLTIP = "";
+Blockly.Msg.VIRUS_MP3_PLAY_FIRST_HELPURL = "";
+
+Blockly.Msg.VIRUS_MP3_PLAY_NEXT = "Démarrer la musique suivante ⏩";
+Blockly.Msg.VIRUS_MP3_PLAY_NEXT_TOOLTIP = "";
+Blockly.Msg.VIRUS_MP3_PLAY_NEXT_HELPURL = "";
+
+Blockly.Msg.VIRUS_MP3_PLAY_PREV = "Démarrer la musique précédente ⏪";
+Blockly.Msg.VIRUS_MP3_PLAY_PREV_TOOLTIP = "";
+Blockly.Msg.VIRUS_MP3_PLAY_PREV_HELPURL = "";
+
+Blockly.Msg.VIRUS_MP3_PAUSE = "Mettre la musique en pause ⏸️";
+Blockly.Msg.VIRUS_MP3_PAUSE_TOOLTIP = "";
+Blockly.Msg.VIRUS_MP3_PAUSE_HELPURL = "";
+
+Blockly.Msg.VIRUS_MP3_PLAY = "Redémarrer la musique ▶️";
+Blockly.Msg.VIRUS_MP3_PLAY_TOOLTIP = "";
+Blockly.Msg.VIRUS_MP3_PLAY_HELPURL = "";
+
+Blockly.Msg.VIRUS_MP3_VOL_INC = "Monter le son 🔊";
+Blockly.Msg.VIRUS_MP3_VOL_INC_TOOLTIP = "";
+Blockly.Msg.VIRUS_MP3_VOL_INC_HELPURL = "";
+
+Blockly.Msg.VIRUS_MP3_VOL_DEC = "Baisser le son 🔉";
+Blockly.Msg.VIRUS_MP3_VOL_DEC_TOOLTIP = "";
+Blockly.Msg.VIRUS_MP3_VOL_DEC_HELPURL = "";
+
+Blockly.Msg.VIRUS_MP3_IS_PLAYING = "la musique est démarrée 🎵";
+Blockly.Msg.VIRUS_MP3_IS_PLAYING_TOOLTIP = "";
+Blockly.Msg.VIRUS_MP3_IS_PLAYING_HELPURL = "";
 
 //X-NUCLEO-IKS01A3 shield blocks: the X-NUCLEO-IKS01A3 is a motion MEMS and environmental sensor evaluation board system, for ST Nucleo boards.
 Blockly.Msg.X_NUCLEO_IKS01A3_Temp_Read_INPUT = "valeur de la température";

@@ -37,7 +37,7 @@ Blockly.Blocks['board_base_inout_buildin_led'] = {
 Blockly.Blocks['board_base_inout_digital_write'] = {
     init: function () {
         this.appendDummyInput()
-                .appendField(new Blockly.FieldImage(mediaFolder + "digital.jpg", 64, 64))
+                /*.appendField(new Blockly.FieldImage(mediaFolder + "digital.jpg", 64, 64))*/
                 .appendField(Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_INPUT1)
                 .appendField(new Blockly.FieldDropdown(profile.default.dropdownDigital), "PIN")
                 .appendField(Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_INPUT2)
@@ -76,7 +76,7 @@ Blockly.Blocks['board_base_inout_highlow'] = {
 Blockly.Blocks['board_base_inout_analog_write'] = {
     init: function () {
         this.appendDummyInput()
-                .appendField(new Blockly.FieldImage(mediaFolder + "pwm.png", 64, 64))
+                /*.appendField(new Blockly.FieldImage(mediaFolder + "pwm.png", 64, 64))*/
                 .appendField(Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_INPUT1)
                 .appendField(new Blockly.FieldDropdown(profile.default.dropdownPWM), "PIN");
         this.appendValueInput("PWM", 'Number')
@@ -96,7 +96,7 @@ Blockly.Blocks['board_base_inout_analog_read'] = {
         this.appendDummyInput()
                 .appendField(Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_INPUT)
                 .appendField(new Blockly.FieldDropdown(profile.default.dropdownAnalog), "PIN");
-        this.setOutput(true, 'int');
+        this.setOutput(true, 'Number');
         this.setTooltip(Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_HELPURL);
         this.setStyle('arduino_blocks');

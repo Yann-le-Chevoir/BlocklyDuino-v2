@@ -74,7 +74,7 @@ html[dir=rtl] {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #CCCC;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -90,10 +90,10 @@ html[dir=rtl] {
   transition: .4s;
 }
 input:checked + .slider {
-  background-color: #17a1a5;
+  background-color: #E10000;
 }
 input:focus + .slider {
-  box-shadow: 0 0 1px #17a1a5;
+  box-shadow: 0 0 1px #E10000;
 }
 input:checked + .slider:before {
   -webkit-transform: translateY(27px);
@@ -239,7 +239,7 @@ td.tabMiddle {
     margin: 5px;
 }
 #content_code {
-    width: 40px;
+    width: 30%;
     height: 100%;
     min-width: 5px;
 }

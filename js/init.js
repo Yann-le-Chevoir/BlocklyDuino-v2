@@ -242,6 +242,11 @@ Code.init = function () {
     }
     dragElement(document.getElementById("barre_h"), "V", document.getElementById("wrapper_up"), document.getElementById("content_serial"));
     dragElement(document.getElementById("separator"), "H", document.getElementById("content_area"), document.getElementById("content_code"));
+	
+	
+	//show button if div is already good
+	if (document.getElementById("content_code").offsetWidth >= 50)
+		document.getElementById("copyCodeButton").style.visibility = 'visible';
 
     Code.renderContent();
     Code.workspace.addChangeListener(Code.renderContent);

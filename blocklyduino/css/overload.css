@@ -7,38 +7,38 @@
 /* CSS specific added for the theme */
 
 body {
-    background-color: #006468;
+    background-color: #FF1E1E;
 }
 #separator {
-    background-color: #006468;
+    background-color: #CCCC;
 }
 #helpModal_header {
-    background-color: #006468;
+    background-color: #FF1E1E;
 }
 .config_content {
-    background-color: #006468;
+    background-color: #FF1E1E;
 }
 .modal-header {
-    background-color: #006468;
+    background-color: #FF1E1E;
 }
 .accordion {
-  background-color: #006468;
+  background-color: #FF1E1E;
 }
 .accordion:hover {
-  color: #006468;
+  color: #FF1E1E;
 }
 .active {
-    color: #006468;
+    color: #FF1E1E;
   background-color: #FFCC00;
 }
 .collapsibleButton {
-    background-color: #006468;
+    background-color: #FF1E1E;
 }
 .active:after {
-    color: #006468;
+    color: #FF1E1E;
 }
 #lateral-panel-setup-label {
-    color: #006468;
+    color: #FF1E1E;
 }
 .closeModal:hover,
 .closeModal:focus {

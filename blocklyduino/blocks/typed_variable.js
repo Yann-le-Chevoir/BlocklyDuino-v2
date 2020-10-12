@@ -16,9 +16,8 @@ goog.provide('Blockly.Constants.VariablesTyped');
 Blockly.Blocks['vars_set_int'] = {
     init: function () {
         this.appendValueInput("VALUE")
-                .appendField("🔢 set")
                 .appendField(new Blockly.FieldVariable("", null, ['int'], 'int'), "VAR_SET_INT")
-                .appendField("to")
+                .appendField("=")
                 .setCheck(intCompatibility);
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);

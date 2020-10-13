@@ -464,10 +464,10 @@
   <sep></sep>
   <category name="%{BKY_CAT_VIRUS_MUSIC}" categorystyle="mp3_category">
     <block type="virus_mp3_init"></block>
-    <block type="virus_mp3_is_playing"></block>
     <block type="virus_mp3_play_first"></block>
     <block type="virus_mp3_play_next"></block>
     <block type="virus_mp3_play_prev"></block>
+    <block type="virus_mp3_is_playing"></block>
     <block type="virus_mp3_pause"></block>
     <block type="virus_mp3_play"></block>
     <block type="virus_mp3_vol_inc"></block>

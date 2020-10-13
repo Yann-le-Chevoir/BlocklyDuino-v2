@@ -26,7 +26,7 @@ Blockly.Blocks['virus_mp3_init'] = {
                 .appendField(new Blockly.FieldDropdown(profile.default.dropdownDigital), "TX");
         this.setTooltip(Blockly.Msg.VIRUS_MP3_INIT_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.VIRUS_MP3_INIT_HELPURL);
-        this.setStyle('arduino_blocks');
+        this.setStyle('mp3_blocks');
     }
 };
 
@@ -38,7 +38,7 @@ Blockly.Blocks['virus_mp3_play_first'] = {
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.VIRUS_MP3_PLAY_FIRST_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.VIRUS_MP3_PLAY_FIRST_HELPURL);
-        this.setStyle('arduino_blocks');
+        this.setStyle('mp3_start_blocks');
     }
 };
 
@@ -50,7 +50,7 @@ Blockly.Blocks['virus_mp3_play_next'] = {
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.VIRUS_MP3_PLAY_NEXT_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.VIRUS_MP3_PLAY_NEXT_HELPURL);
-        this.setStyle('arduino_blocks');
+        this.setStyle('mp3_start_blocks');
     }
 };
 
@@ -62,7 +62,7 @@ Blockly.Blocks['virus_mp3_play_prev'] = {
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.VIRUS_MP3_PLAY_PREV_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.VIRUS_MP3_PLAY_PREV_HELPURL);
-        this.setStyle('arduino_blocks');
+        this.setStyle('mp3_start_blocks');
     }
 };
 
@@ -74,7 +74,7 @@ Blockly.Blocks['virus_mp3_play'] = {
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.VIRUS_MP3_PLAY_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.VIRUS_MP3_PLAY_HELPURL);
-        this.setStyle('arduino_blocks');
+        this.setStyle('mp3_play_pause_blocks');
     }
 };
 
@@ -86,7 +86,7 @@ Blockly.Blocks['virus_mp3_pause'] = {
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.VIRUS_MP3_PAUSE_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.VIRUS_MP3_PAUSE_HELPURL);
-        this.setStyle('arduino_blocks');
+        this.setStyle('mp3_play_pause_blocks');
     }
 };
 
@@ -98,7 +98,7 @@ Blockly.Blocks['virus_mp3_vol_inc'] = {
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.VIRUS_MP3_VOL_INC_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.VIRUS_MP3_VOL_INC_HELPURL);
-        this.setStyle('arduino_blocks');
+        this.setStyle('mp3_sound_blocks');
     }
 };
 
@@ -110,7 +110,7 @@ Blockly.Blocks['virus_mp3_vol_dec'] = {
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.VIRUS_MP3_VOL_DEC_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.VIRUS_MP3_VOL_DEC_HELPURL);
-        this.setStyle('arduino_blocks');
+        this.setStyle('mp3_sound_blocks');
     }
 };
 
@@ -121,6 +121,6 @@ Blockly.Blocks['virus_mp3_is_playing'] = {
 		this.setOutput(true, "Boolean");
         this.setTooltip(Blockly.Msg.VIRUS_MP3_VOL_DEC_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.VIRUS_MP3_VOL_DEC_HELPURL);
-        this.setStyle('arduino_blocks');
+        this.setStyle('input_blocks');
     }
 };

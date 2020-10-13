@@ -11,7 +11,19 @@
 
 //Classic Theme
 Blockly.Themes.Classic.categoryStyles['arduino_category'] = {
-    "colour": "#007481"
+    "colour": "#830000"
+};
+Blockly.Themes.Classic.categoryStyles['input_category'] = {
+    "colour": "#B266FF"
+};
+Blockly.Themes.Classic.categoryStyles['output_category'] = {
+    "colour": "#3333FF"
+};
+Blockly.Themes.Classic.categoryStyles['time_category'] = {
+    "colour": "#009900"
+};
+Blockly.Themes.Classic.categoryStyles['mp3_category'] = {
+    "colour": "#FF8000"
 };
 Blockly.Themes.Classic.categoryStyles['seeed_category'] = {
     "colour": "#91C11E"

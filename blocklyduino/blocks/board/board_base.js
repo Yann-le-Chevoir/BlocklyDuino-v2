@@ -30,7 +30,7 @@ Blockly.Blocks['board_base_inout_buildin_led'] = {
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.ARDUINO_INOUT_BUILDIN_LED_TOOLTIP);
-        this.setStyle('arduino_blocks');
+        this.setStyle('output_blocks');
     }
 };
 
@@ -46,7 +46,7 @@ Blockly.Blocks['board_base_inout_digital_write'] = {
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.ARDUINO_INOUT_DIGITAL_WRITE_HELPURL);
-        this.setStyle('arduino_blocks');
+        this.setStyle('output_blocks');
     }
 };
 
@@ -58,7 +58,7 @@ Blockly.Blocks['board_base_inout_digital_read'] = {
         this.setOutput(true, 'Boolean');
         this.setTooltip(Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.ARDUINO_INOUT_DIGITAL_READ_HELPURL);
-        this.setStyle('arduino_blocks');
+        this.setStyle('input_blocks');
     }
 };
 
@@ -69,7 +69,7 @@ Blockly.Blocks['board_base_inout_highlow'] = {
         this.setOutput(true, 'Boolean');
         this.setTooltip(Blockly.Msg.LOGIC_BOOLEAN_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.ARDUINO_INOUT_ONOFF_HELPURL);
-        this.setStyle('arduino_blocks');
+        this.setStyle('math_blocks');
     }
 };
 
@@ -87,7 +87,7 @@ Blockly.Blocks['board_base_inout_analog_write'] = {
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.ARDUINO_INOUT_ANALOG_WRITE_HELPURL);
-        this.setStyle('arduino_blocks');
+        this.setStyle('output_blocks');
     }
 };
 
@@ -99,7 +99,7 @@ Blockly.Blocks['board_base_inout_analog_read'] = {
         this.setOutput(true, 'Number');
         this.setTooltip(Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.ARDUINO_INOUT_ANALOG_READ_HELPURL);
-        this.setStyle('arduino_blocks');
+        this.setStyle('input_blocks');
     }
 };
 
@@ -113,7 +113,7 @@ Blockly.Blocks['board_base_delay'] = {
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.ARDUINO_BASE_DELAY_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.ARDUINO_BASE_DELAY_HELPURL);
-        this.setStyle('arduino_blocks');
+        this.setStyle('time_blocks');
     }
 };
 

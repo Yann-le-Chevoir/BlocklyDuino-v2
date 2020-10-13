@@ -13,7 +13,27 @@
 Blockly.Themes.Classic.blockStyles['arduino_blocks'] = {
     "colourPrimary": "#007481"
 };
-
+Blockly.Themes.Classic.blockStyles['input_blocks'] = {
+    "colourPrimary": "#B266FF"
+};
+Blockly.Themes.Classic.blockStyles['output_blocks'] = {
+    "colourPrimary": "#3333FF"
+};
+Blockly.Themes.Classic.blockStyles['time_blocks'] = {
+    "colourPrimary": "#009900"
+};
+Blockly.Themes.Classic.blockStyles['mp3_blocks'] = {
+    "colourPrimary": "#FF8000"
+};
+Blockly.Themes.Classic.blockStyles['mp3_start_blocks'] = {
+    "colourPrimary": "#FF9933"
+};
+Blockly.Themes.Classic.blockStyles['mp3_play_pause_blocks'] = {
+    "colourPrimary": "#FFB266"
+};
+Blockly.Themes.Classic.blockStyles['mp3_sound_blocks'] = {
+    "colourPrimary": "#FF9999"
+};
 Blockly.Themes.Classic.blockStyles['seeed_blocks'] = {
     "colourPrimary": "#91C11E"
 };

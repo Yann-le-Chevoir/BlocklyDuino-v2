@@ -31,7 +31,7 @@ Blockly.Blocks['vars_get_int'] = {
     init: function () {
         this.appendDummyInput()
                 .appendField(new Blockly.FieldVariable("", null, ['int'], 'int'), "VAR_GET_INT");
-        this.setOutput(true, "int");
+        this.setOutput(true, "Number");
         this.setStyle('variable_blocks');
         this.setTooltip("");
         this.setHelpUrl("");

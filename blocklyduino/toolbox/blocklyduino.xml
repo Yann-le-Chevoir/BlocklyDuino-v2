@@ -79,19 +79,15 @@
     <block type="math_number" gap="32">
       <field name="NUM">0</field>
     </block>
-    <!--block type="math_arithmetic">
-      <value name="A">
-        <block type="math_number">
-          <field name="NUM">1</field>
-        </block>
-      </value>
+    <block type="math_arithmetic">
+      <value name="A"></value>
       <value name="B">
         <block type="math_number">
           <field name="NUM">1</field>
         </block>
       </value>
     </block>
-    <block type="math_single">
+    <!--block type="math_single">
       <value name="NUM">
         <block type="math_number">
           <field name="NUM">9</field>

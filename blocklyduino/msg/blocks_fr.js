@@ -138,6 +138,35 @@ Blockly.Msg.VIRUS_MP3_IS_PLAYING = "la musique est démarrée 🎵";
 Blockly.Msg.VIRUS_MP3_IS_PLAYING_TOOLTIP = "";
 Blockly.Msg.VIRUS_MP3_IS_PLAYING_HELPURL = "";
 
+Blockly.Msg.VIRUS_I2C_MASTER_INIT = "Initialiser l'arduino comme un master I2C";
+Blockly.Msg.VIRUS_I2C_MASTER_INIT_TOOLTIP = "";
+Blockly.Msg.VIRUS_I2C_MASTER_INIT_HELPURL = "";
+
+Blockly.Msg.VIRUS_I2C_MASTER_REQUEST_FROM = "valeur de la donnée du slave I2C";
+Blockly.Msg.VIRUS_I2C_MASTER_REQUEST_FROM2 = "à l'adresse (0~127)";
+Blockly.Msg.VIRUS_I2C_MASTER_REQUEST_FROM_TOOLTIP = "";
+Blockly.Msg.VIRUS_I2C_MASTER_REQUEST_FROM_HELPURL = "";
+
+Blockly.Msg.VIRUS_I2C_MASTER_SEND_TO = "Envoyer";
+Blockly.Msg.VIRUS_I2C_MASTER_SEND_TO2 = "la donnée";
+Blockly.Msg.VIRUS_I2C_MASTER_SEND_TO3 = "au slave I2C à l'adresse (0~127)";
+Blockly.Msg.VIRUS_I2C_MASTER_SEND_TO_TOOLTIP = "";
+Blockly.Msg.VIRUS_I2C_MASTER_SEND_TO_HELPURL = "";
+
+Blockly.Msg.VIRUS_I2C_SLAVE_INIT = "Initialiser l'arduino comme un slave I2C";
+Blockly.Msg.VIRUS_I2C_SLAVE_INIT2 = "avec l'adresse (0~127)";
+Blockly.Msg.VIRUS_I2C_SLAVE_INIT_TOOLTIP = "";
+Blockly.Msg.VIRUS_I2C_SLAVE_INIT_HELPURL = "";
+
+Blockly.Msg.VIRUS_I2C_SLAVE_SET_DATA = "Mettre la prochaine donnée à envoyer au maître";
+Blockly.Msg.VIRUS_I2C_SLAVE_SET_DATA2 = "à la valeur";
+Blockly.Msg.VIRUS_I2C_SLAVE_SET_DATA_TOOLTIP = "";
+Blockly.Msg.VIRUS_I2C_SLAVE_SET_DATA_HELPURL = "";
+
+Blockly.Msg.VIRUS_I2C_SLAVE_GET_DATA = "dernière donnée reçue du maître";
+Blockly.Msg.VIRUS_I2C_SLAVE_GET_DATA_TOOLTIP = "";
+Blockly.Msg.VIRUS_I2C_SLAVE_GET_DATA_HELPURL = "";
+
 //X-NUCLEO-IKS01A3 shield blocks: the X-NUCLEO-IKS01A3 is a motion MEMS and environmental sensor evaluation board system, for ST Nucleo boards.
 Blockly.Msg.X_NUCLEO_IKS01A3_Temp_Read_INPUT = "valeur de la température";
 Blockly.Msg.X_NUCLEO_IKS01A3_Temp_Read_TOOLTIP = "HTS221: capteur de la carte, renvoie la température en °Celsius";

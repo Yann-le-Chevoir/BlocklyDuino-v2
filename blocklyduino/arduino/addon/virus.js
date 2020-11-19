@@ -66,3 +66,49 @@ Blockly.Arduino['virus_mp3_is_playing'] = function (block) {
     var code = 'mp3_player.isPlaying()';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+
+Blockly.Arduino['virus_i2c_master_init'] = function (block) {
+
+    Blockly.Arduino.includes_['includes_virus'] = '#include <Virus.h>';
+    Blockly.Arduino.definitions_['var_virus_i2c_master_init'] = 'I2C_master i2c_master;';
+    Blockly.Arduino.setups_['setup_virus_i2c_master_init'] = 'i2c_master.init();';
+
+    var code = '';
+    return code;
+};
+
+Blockly.Arduino['virus_i2c_master_request_from'] = function (block) {
+    var address = Blockly.Arduino.valueToCode(this, 'ADDRESS', Blockly.Arduino.ORDER_ATOMIC);
+
+    var code = 'i2c_master.requestFrom(' + address + ')';
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino['virus_i2c_master_send_to'] = function (block) {
+    var address = Blockly.Arduino.valueToCode(this, 'ADDRESS', Blockly.Arduino.ORDER_ATOMIC);
+    var data = Blockly.Arduino.valueToCode(this, 'DATA', Blockly.Arduino.ORDER_ATOMIC);
+    var code = 'i2c_master.sendTo(' + address + ', ' + data + ');\n';
+    return code;
+};
+
+Blockly.Arduino['virus_i2c_slave_init'] = function (block) {
+    var address = Blockly.Arduino.valueToCode(this, 'ADDRESS', Blockly.Arduino.ORDER_ATOMIC);
+
+    Blockly.Arduino.includes_['includes_virus'] = '#include <Virus.h>';
+    Blockly.Arduino.definitions_['var_virus_i2c_slave_init'] = 'I2C_slave i2c_slave;';
+    Blockly.Arduino.setups_['setup_virus_i2c_slave_init'] = 'i2c_slave.init(' + address + ');';
+
+    var code = '';
+    return code;
+};
+
+Blockly.Arduino['virus_i2c_slave_set_data'] = function (block) {
+    var data = Blockly.Arduino.valueToCode(this, 'DATA', Blockly.Arduino.ORDER_ATOMIC);
+    var code = 'i2c_slave.setSendData(' + data + ');\n';
+    return code;
+};
+
+Blockly.Arduino['virus_i2c_slave_get_data'] = function (block) {
+    var code = 'i2c_slave.getReceivedData()';
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+};

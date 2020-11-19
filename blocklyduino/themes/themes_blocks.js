@@ -34,6 +34,12 @@ Blockly.Themes.Classic.blockStyles['mp3_play_pause_blocks'] = {
 Blockly.Themes.Classic.blockStyles['mp3_sound_blocks'] = {
     "colourPrimary": "#FF9999"
 };
+Blockly.Themes.Classic.blockStyles['i2c_master_blocks'] = {
+    "colourPrimary": "#FF9999"
+};
+Blockly.Themes.Classic.blockStyles['i2c_slave_blocks'] = {
+    "colourPrimary": "#FF9999"
+};
 Blockly.Themes.Classic.blockStyles['seeed_blocks'] = {
     "colourPrimary": "#91C11E"
 };

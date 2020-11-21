@@ -146,7 +146,7 @@ Blockly.Blocks['virus_i2c_master_request_from'] = {
         this.setOutput(true, intCompatibility);
         this.setTooltip(Blockly.Msg.VIRUS_I2C_MASTER_REQUEST_FROM_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.VIRUS_I2C_MASTER_REQUEST_FROM_HELPURL);
-        this.setStyle('i2c_master_blocks');
+        this.setStyle('input_blocks');
     }
 };
 
@@ -165,7 +165,7 @@ Blockly.Blocks['virus_i2c_master_send_to'] = {
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.VIRUS_I2C_MASTER_SEND_TO_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.VIRUS_I2C_MASTER_SEND_TO_HELPURL);
-        this.setStyle('i2c_master_blocks');
+        this.setStyle('output_blocks');
     }
 };
 
@@ -195,7 +195,7 @@ Blockly.Blocks['virus_i2c_slave_set_data'] = {
         this.setNextStatement(true, null);
         this.setTooltip(Blockly.Msg.VIRUS_I2C_SLAVE_SET_DATA_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.VIRUS_I2C_SLAVE_SET_DATA_HELPURL);
-        this.setStyle('i2c_slave_blocks');
+        this.setStyle('output_blocks');
     }
 };
 
@@ -206,6 +206,6 @@ Blockly.Blocks['virus_i2c_slave_get_data'] = {
         this.setOutput(true, intCompatibility);
         this.setTooltip(Blockly.Msg.VIRUS_I2C_SLAVE_GET_DATA_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.VIRUS_I2C_SLAVE_GET_DATA_HELPURL);
-        this.setStyle('i2c_slave_blocks');
+        this.setStyle('input_blocks');
     }
 };

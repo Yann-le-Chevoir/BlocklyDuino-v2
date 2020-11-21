@@ -25,8 +25,11 @@ Blockly.Themes.Classic.categoryStyles['time_category'] = {
 Blockly.Themes.Classic.categoryStyles['mp3_category'] = {
     "colour": "#FF8000"
 };
-Blockly.Themes.Classic.categoryStyles['i2c_category'] = {
-    "colour": "#FF8000"
+Blockly.Themes.Classic.categoryStyles['i2c_master_category'] = {
+    "colour": "#009999"
+};
+Blockly.Themes.Classic.categoryStyles['i2c_slave_category'] = {
+    "colour": "#990099"
 };
 Blockly.Themes.Classic.categoryStyles['seeed_category'] = {
     "colour": "#91C11E"

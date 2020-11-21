@@ -138,32 +138,32 @@ Blockly.Msg.VIRUS_MP3_IS_PLAYING = "la musique est démarrée 🎵";
 Blockly.Msg.VIRUS_MP3_IS_PLAYING_TOOLTIP = "";
 Blockly.Msg.VIRUS_MP3_IS_PLAYING_HELPURL = "";
 
-Blockly.Msg.VIRUS_I2C_MASTER_INIT = "Initialiser l'arduino comme un master I2C";
+Blockly.Msg.VIRUS_I2C_MASTER_INIT = "Je suis le contrôleur principal I2C 📤";
 Blockly.Msg.VIRUS_I2C_MASTER_INIT_TOOLTIP = "";
 Blockly.Msg.VIRUS_I2C_MASTER_INIT_HELPURL = "";
 
-Blockly.Msg.VIRUS_I2C_MASTER_REQUEST_FROM = "valeur de la donnée du slave I2C";
+Blockly.Msg.VIRUS_I2C_MASTER_REQUEST_FROM = "la valeur de la donnée du contrôleur secondaire";
 Blockly.Msg.VIRUS_I2C_MASTER_REQUEST_FROM2 = "à l'adresse (0~127)";
 Blockly.Msg.VIRUS_I2C_MASTER_REQUEST_FROM_TOOLTIP = "";
 Blockly.Msg.VIRUS_I2C_MASTER_REQUEST_FROM_HELPURL = "";
 
 Blockly.Msg.VIRUS_I2C_MASTER_SEND_TO = "Envoyer";
 Blockly.Msg.VIRUS_I2C_MASTER_SEND_TO2 = "la donnée";
-Blockly.Msg.VIRUS_I2C_MASTER_SEND_TO3 = "au slave I2C à l'adresse (0~127)";
+Blockly.Msg.VIRUS_I2C_MASTER_SEND_TO3 = "au contrôleur secondaire I2C à l'adresse (0~127)";
 Blockly.Msg.VIRUS_I2C_MASTER_SEND_TO_TOOLTIP = "";
 Blockly.Msg.VIRUS_I2C_MASTER_SEND_TO_HELPURL = "";
 
-Blockly.Msg.VIRUS_I2C_SLAVE_INIT = "Initialiser l'arduino comme un slave I2C";
+Blockly.Msg.VIRUS_I2C_SLAVE_INIT = "Je suis un contrôleur secondaire I2C 📥";
 Blockly.Msg.VIRUS_I2C_SLAVE_INIT2 = "avec l'adresse (0~127)";
 Blockly.Msg.VIRUS_I2C_SLAVE_INIT_TOOLTIP = "";
 Blockly.Msg.VIRUS_I2C_SLAVE_INIT_HELPURL = "";
 
-Blockly.Msg.VIRUS_I2C_SLAVE_SET_DATA = "Mettre la prochaine donnée à envoyer au maître";
+Blockly.Msg.VIRUS_I2C_SLAVE_SET_DATA = "Mettre la prochaine donnée I2C à envoyer";
 Blockly.Msg.VIRUS_I2C_SLAVE_SET_DATA2 = "à la valeur";
 Blockly.Msg.VIRUS_I2C_SLAVE_SET_DATA_TOOLTIP = "";
 Blockly.Msg.VIRUS_I2C_SLAVE_SET_DATA_HELPURL = "";
 
-Blockly.Msg.VIRUS_I2C_SLAVE_GET_DATA = "dernière donnée reçue du maître";
+Blockly.Msg.VIRUS_I2C_SLAVE_GET_DATA = "la valeur de la dernière donnée I2C reçue";
 Blockly.Msg.VIRUS_I2C_SLAVE_GET_DATA_TOOLTIP = "";
 Blockly.Msg.VIRUS_I2C_SLAVE_GET_DATA_HELPURL = "";
 

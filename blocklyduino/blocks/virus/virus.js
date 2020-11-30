@@ -209,3 +209,31 @@ Blockly.Blocks['virus_i2c_slave_get_data'] = {
         this.setStyle('input_blocks');
     }
 };
+
+Blockly.Blocks['virus_ev3_master_init'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField(Blockly.Msg.VIRUS_EV3_MASTER_INIT);
+        this.setInputsInline(true);
+        this.setTooltip(Blockly.Msg.VIRUS_EV3_MASTER_INIT_TOOLTIP);
+        this.setHelpUrl(Blockly.Msg.VIRUS_EV3_MASTER_INIT_HELPURL);
+        this.setStyle('ev3_master_blocks');
+    }
+};
+
+Blockly.Blocks['virus_ev3_master_set_motor_speed'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField(Blockly.Msg.VIRUS_EV3_MASTER_SET_MOTOR_SPEED)
+                .appendField(new Blockly.FieldDropdown([["A", "1"], ["B", "2"], ["C", "3"], ["D", "4"]]), "MOTOR");
+        this.appendValueInput("SPEED", 'Number')
+                .appendField(Blockly.Msg.VIRUS_EV3_MASTER_SET_MOTOR_SPEED2)
+                .setCheck(intCompatibility);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.VIRUS_EV3_MASTER_SET_MOTOR_SPEED_TOOLTIP);
+        this.setHelpUrl(Blockly.Msg.VIRUS_EV3_MASTER_SET_MOTOR_SPEED_HELPURL);
+        this.setStyle('output_blocks');
+    }
+};

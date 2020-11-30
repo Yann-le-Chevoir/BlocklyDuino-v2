@@ -31,6 +31,9 @@ Blockly.Themes.Classic.categoryStyles['i2c_master_category'] = {
 Blockly.Themes.Classic.categoryStyles['i2c_slave_category'] = {
     "colour": "#990099"
 };
+Blockly.Themes.Classic.categoryStyles['ev3_master_category'] = {
+    "colour": "#FF0000"
+};
 Blockly.Themes.Classic.categoryStyles['seeed_category'] = {
     "colour": "#91C11E"
 };

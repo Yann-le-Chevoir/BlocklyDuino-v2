@@ -509,4 +509,15 @@
       </value>
     </block>
   </category>
+  <sep></sep>
+  <category name="%{BKY_CAT_VIRUS_EV3_MASTER}" categorystyle="ev3_master_category">
+    <block type="virus_ev3_master_init"></block>
+    <block type="virus_ev3_master_set_motor_speed">
+      <value name="SPEED">
+        <block type="math_number">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+    </block>
+  </category>
 </xml>

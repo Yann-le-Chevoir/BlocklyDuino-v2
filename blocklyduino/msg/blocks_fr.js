@@ -167,6 +167,15 @@ Blockly.Msg.VIRUS_I2C_SLAVE_GET_DATA = "la valeur de la dernière donnée I2C re
 Blockly.Msg.VIRUS_I2C_SLAVE_GET_DATA_TOOLTIP = "";
 Blockly.Msg.VIRUS_I2C_SLAVE_GET_DATA_HELPURL = "";
 
+Blockly.Msg.VIRUS_EV3_MASTER_INIT = "Je peux contrôler une brique EV3 (USB) 🎅";
+Blockly.Msg.VIRUS_EV3_MASTER_INIT_TOOLTIP = "";
+Blockly.Msg.VIRUS_EV3_MASTER_INIT_HELPURL = "";
+
+Blockly.Msg.VIRUS_EV3_MASTER_SET_MOTOR_SPEED = "EV3 : mettre le gros moteur";
+Blockly.Msg.VIRUS_EV3_MASTER_SET_MOTOR_SPEED2 = "à la vitesse";
+Blockly.Msg.VIRUS_EV3_MASTER_SET_MOTOR_SPEED_TOOLTIP = "";
+Blockly.Msg.VIRUS_EV3_MASTER_SET_MOTOR_SPEED_HELPURL = "";
+
 //X-NUCLEO-IKS01A3 shield blocks: the X-NUCLEO-IKS01A3 is a motion MEMS and environmental sensor evaluation board system, for ST Nucleo boards.
 Blockly.Msg.X_NUCLEO_IKS01A3_Temp_Read_INPUT = "valeur de la température";
 Blockly.Msg.X_NUCLEO_IKS01A3_Temp_Read_TOOLTIP = "HTS221: capteur de la carte, renvoie la température en °Celsius";

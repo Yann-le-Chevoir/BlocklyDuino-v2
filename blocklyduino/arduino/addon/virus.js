@@ -112,3 +112,20 @@ Blockly.Arduino['virus_i2c_slave_get_data'] = function (block) {
     var code = 'i2c_slave.getReceivedData()';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+
+Blockly.Arduino['virus_ev3_master_init'] = function (block) {
+
+    Blockly.Arduino.includes_['includes_virus'] = '#include <Virus.h>';
+    Blockly.Arduino.definitions_['var_virus_ev3_master_init'] = 'EV3_master ev3_master;';
+    Blockly.Arduino.setups_['setup_serial_begin_9600'] = 'Serial.begin(9600);';
+
+    var code = '';
+    return code;
+};
+
+Blockly.Arduino['virus_ev3_master_set_motor_speed'] = function (block) {
+    var motor = block.getFieldValue('MOTOR');
+    var speed = Blockly.Arduino.valueToCode(this, 'SPEED', Blockly.Arduino.ORDER_ATOMIC);
+    var code = 'ev3_master.setMotorSpeed(' + motor + ', ' + speed + ');\n';
+    return code;
+};

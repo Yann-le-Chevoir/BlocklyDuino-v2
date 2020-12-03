@@ -42,6 +42,12 @@ Blockly.Arduino['virus_mp3_play_prev'] = function (block) {
     return code;
 };
 
+Blockly.Arduino['virus_mp3_play_track'] = function (block) {
+    var track = Blockly.Arduino.valueToCode(this, 'TRACK', Blockly.Arduino.ORDER_ATOMIC);
+    var code = 'mp3_player.playTrack(' + track + ');\n';
+    return code;
+};
+
 Blockly.Arduino['virus_mp3_play'] = function (block) {
     var code = 'mp3_player.play();\n';
     return code;

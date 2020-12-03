@@ -118,6 +118,11 @@ Blockly.Msg.VIRUS_MP3_PLAY_PREV = "Démarrer la musique précédente ⏪";
 Blockly.Msg.VIRUS_MP3_PLAY_PREV_TOOLTIP = "";
 Blockly.Msg.VIRUS_MP3_PLAY_PREV_HELPURL = "";
 
+Blockly.Msg.VIRUS_MP3_PLAY_TRACK = "🎵 Démarrer la musique";
+Blockly.Msg.VIRUS_MP3_PLAY_TRACK2 = "numéro (0~255)";
+Blockly.Msg.VIRUS_MP3_PLAY_TRACK_TOOLTIP = "";
+Blockly.Msg.VIRUS_MP3_PLAY_TRACK_HELPURL = "";
+
 Blockly.Msg.VIRUS_MP3_PAUSE = "Mettre la musique en pause ⏸️";
 Blockly.Msg.VIRUS_MP3_PAUSE_TOOLTIP = "";
 Blockly.Msg.VIRUS_MP3_PAUSE_HELPURL = "";

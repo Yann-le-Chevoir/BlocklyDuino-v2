@@ -66,6 +66,22 @@ Blockly.Blocks['virus_mp3_play_prev'] = {
     }
 };
 
+Blockly.Blocks['virus_mp3_play_track'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField(Blockly.Msg.VIRUS_MP3_PLAY_TRACK)
+        this.appendValueInput("TRACK", 'Number')
+                .appendField(Blockly.Msg.VIRUS_MP3_PLAY_TRACK2)
+                .setCheck(intCompatibility);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.VIRUS_MP3_PLAY_TRACK_TOOLTIP);
+        this.setHelpUrl(Blockly.Msg.VIRUS_MP3_PLAY_TRACK_HELPURL);
+        this.setStyle('mp3_start_blocks');
+    }
+};
+
 Blockly.Blocks['virus_mp3_play'] = {
     init: function () {
         this.appendDummyInput()

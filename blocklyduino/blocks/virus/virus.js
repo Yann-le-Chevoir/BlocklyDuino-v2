@@ -253,3 +253,60 @@ Blockly.Blocks['virus_ev3_master_set_motor_speed'] = {
         this.setStyle('output_blocks');
     }
 };
+
+Blockly.Blocks['virus_attiny85_init'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField(Blockly.Msg.VIRUS_ATTINY85_INIT);
+        this.setInputsInline(true);
+        this.setTooltip(Blockly.Msg.VIRUS_ATTINY85_INIT_TOOLTIP);
+        this.setHelpUrl(Blockly.Msg.VIRUS_ATTINY85_INIT_HELPURL);
+        this.setStyle('attiny85_blocks');
+    }
+};
+
+Blockly.Blocks['virus_attiny85_button'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField(Blockly.Msg.VIRUS_ATTINY85_BUTTON);
+		this.setOutput(true, "Boolean");
+        this.setTooltip(Blockly.Msg.VIRUS_ATTINY85_BUTTON_TOOLTIP);
+        this.setHelpUrl(Blockly.Msg.VIRUS_ATTINY85_BUTTON_HELPURL);
+        this.setStyle('input_blocks');
+    }
+};
+
+Blockly.Blocks['virus_attiny85_set_colour'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField(Blockly.Msg.VIRUS_ATTINY85_SET_COLOUR)
+                .appendField(new Blockly.FieldDropdown([["ROUGE", "2"], ["VERT", "1"], ["BLEU", "0"]]), "COLOUR");
+        this.appendValueInput("VALUE", 'Number')
+                .appendField(Blockly.Msg.VIRUS_ATTINY85_SET_COLOUR2)
+                .setCheck(intCompatibility);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.VIRUS_ATTINY85_SET_COLOUR_TOOLTIP);
+        this.setHelpUrl(Blockly.Msg.VIRUS_ATTINY85_SET_COLOUR_HELPURL);
+        this.setStyle('output_blocks');
+    }
+};
+
+
+Blockly.Blocks['virus_attiny85_set_output'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField(Blockly.Msg.VIRUS_ATTINY85_SET_OUTPUT)
+                .appendField(new Blockly.FieldDropdown([["0", "0"], ["1", "1"], ["2", "2"]]), "OUTPUT");
+        this.appendValueInput("VALUE", 'Number')
+                .appendField(Blockly.Msg.VIRUS_ATTINY85_SET_OUTPUT2)
+                .setCheck(intCompatibility);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.VIRUS_ATTINY85_SET_OUTPUT_TOOLTIP);
+        this.setHelpUrl(Blockly.Msg.VIRUS_ATTINY85_SET_OUTPUT_HELPURL);
+        this.setStyle('output_blocks');
+    }
+};

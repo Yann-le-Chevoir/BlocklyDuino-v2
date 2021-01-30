@@ -181,6 +181,24 @@ Blockly.Msg.VIRUS_EV3_MASTER_SET_MOTOR_SPEED2 = "à la vitesse";
 Blockly.Msg.VIRUS_EV3_MASTER_SET_MOTOR_SPEED_TOOLTIP = "";
 Blockly.Msg.VIRUS_EV3_MASTER_SET_MOTOR_SPEED_HELPURL = "";
 
+Blockly.Msg.VIRUS_ATTINY85_INIT = "Je suis un microcontrôleur ATtiny85 🛰️";
+Blockly.Msg.VIRUS_ATTINY85_INIT_TOOLTIP = "";
+Blockly.Msg.VIRUS_ATTINY85_INIT_HELPURL = "";
+
+Blockly.Msg.VIRUS_ATTINY85_BUTTON = "le bouton est appuyé";
+Blockly.Msg.VIRUS_ATTINY85_BUTTON_TOOLTIP = "";
+Blockly.Msg.VIRUS_ATTINY85_BUTTON_HELPURL = "";
+
+Blockly.Msg.VIRUS_ATTINY85_SET_COLOUR = "Mettre la couleur";
+Blockly.Msg.VIRUS_ATTINY85_SET_COLOUR2 = "à la valeur (0~255)";
+Blockly.Msg.ATTINY85_SET_COLOUR_TOOLTIP = "";
+Blockly.Msg.VATTINY85_SET_COLOUR_HELPURL = "";
+
+Blockly.Msg.VIRUS_ATTINY85_SET_OUTPUT = "Mettre la sortie";
+Blockly.Msg.VIRUS_ATTINY85_SET_OUTPUT2 = "à la valeur (0~255)";
+Blockly.Msg.ATTINY85_SET_OUTPUT_TOOLTIP = "";
+Blockly.Msg.VATTINY85_SET_OUTPUT_HELPURL = "";
+
 //X-NUCLEO-IKS01A3 shield blocks: the X-NUCLEO-IKS01A3 is a motion MEMS and environmental sensor evaluation board system, for ST Nucleo boards.
 Blockly.Msg.X_NUCLEO_IKS01A3_Temp_Read_INPUT = "valeur de la température";
 Blockly.Msg.X_NUCLEO_IKS01A3_Temp_Read_TOOLTIP = "HTS221: capteur de la carte, renvoie la température en °Celsius";

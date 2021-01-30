@@ -43,6 +43,9 @@ Blockly.Themes.Classic.blockStyles['i2c_slave_blocks'] = {
 Blockly.Themes.Classic.blockStyles['ev3_master_blocks'] = {
     "colourPrimary": "#FF0000"
 };
+Blockly.Themes.Classic.blockStyles['attiny85_blocks'] = {
+    "colourPrimary": "#0066CC"
+};
 Blockly.Themes.Classic.blockStyles['seeed_blocks'] = {
     "colourPrimary": "#91C11E"
 };

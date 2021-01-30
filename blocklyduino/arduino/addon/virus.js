@@ -135,3 +135,32 @@ Blockly.Arduino['virus_ev3_master_set_motor_speed'] = function (block) {
     var code = 'ev3_master.setMotorSpeed(' + motor + ', ' + speed + ');\n';
     return code;
 };
+
+Blockly.Arduino['virus_attiny85_init'] = function (block) {
+
+    Blockly.Arduino.includes_['includes_virus'] = '#include <Virus.h>';
+    Blockly.Arduino.definitions_['var_virus_attiny85_init'] = 'ATtiny85 attiny85;';
+    Blockly.Arduino.setups_['setup_virus_attiny85_init'] = 'attiny85.init();';
+
+    var code = '';
+    return code;
+};
+
+Blockly.Arduino['virus_attiny85_button'] = function (block) {
+    var code = 'attiny85.isButtonPushed()';
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino['virus_attiny85_set_colour'] = function (block) {
+    var colour = block.getFieldValue('COLOUR');
+    var value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ATOMIC);
+    var code = 'attiny85.setColour(' + colour + ', ' + value + ');\n';
+    return code;
+};
+
+Blockly.Arduino['virus_attiny85_set_output'] = function (block) {
+    var output = block.getFieldValue('OUTPUT');
+    var value = Blockly.Arduino.valueToCode(this, 'VALUE', Blockly.Arduino.ORDER_ATOMIC);
+    var code = 'attiny85.setOutput(' + output + ', ' + value + ');\n';
+    return code;
+};

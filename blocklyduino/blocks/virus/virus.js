@@ -280,7 +280,7 @@ Blockly.Blocks['virus_attiny85_set_colour'] = {
     init: function () {
         this.appendDummyInput()
                 .appendField(Blockly.Msg.VIRUS_ATTINY85_SET_COLOUR)
-                .appendField(new Blockly.FieldDropdown([["ROUGE", "2"], ["VERT", "1"], ["BLEU", "0"]]), "COLOUR");
+                .appendField(new Blockly.FieldDropdown([["ROUGE", "0"], ["VERT", "1"], ["BLEU", "2"]]), "COLOUR");
         this.appendValueInput("VALUE", 'Number')
                 .appendField(Blockly.Msg.VIRUS_ATTINY85_SET_COLOUR2)
                 .setCheck(intCompatibility);

@@ -528,6 +528,11 @@
     </block>
   </category>
   <sep></sep>
+  <category name="%{BKY_CAT_VIRUS_ULTRASON_CAPTEUR}" categorystyle="ultrason_capteur_category">
+    <block type="virus_ultrason_capteur_init"></block>
+    <block type="virus_ultrason_capteur_get_distance"></block>
+  </category>
+  <sep></sep>
   <category name="%{BKY_CAT_VIRUS_ATTINY85}" categorystyle="attiny85_category">
     <block type="virus_attiny85_init"></block>
     <block type="virus_attiny85_button"></block>

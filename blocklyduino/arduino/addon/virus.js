@@ -164,3 +164,22 @@ Blockly.Arduino['virus_attiny85_set_output'] = function (block) {
     var code = 'attiny85.setOutput(' + output + ', ' + value + ');\n';
     return code;
 };
+
+Blockly.Arduino['virus_ultrason_capteur_init'] = function (block) {
+    var num = block.getFieldValue('NUM');
+    var echoPin = block.getFieldValue('ECHO');
+    var triggerPin = block.getFieldValue('TRIGGER');
+
+    Blockly.Arduino.includes_['includes_virus'] = '#include <Virus.h>';
+    Blockly.Arduino.definitions_['var_virus_ultrason_capteur_init'] = 'Ultrason_capteur ultrason_capteurs[' + (Number(num)+1).toString() + '];';
+    Blockly.Arduino.setups_['setup_virus_ultrason_capteur_init_' + num] = 'ultrason_capteurs[' + num + '].init(' + echoPin + ', ' + triggerPin + ');';
+
+    var code = '';
+    return code;
+};
+
+Blockly.Arduino['virus_ultrason_capteur_get_distance'] = function (block) {
+    var num = block.getFieldValue('NUM');
+    var code = 'ultrason_capteurs[' + num + '].getDistance()';
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+};

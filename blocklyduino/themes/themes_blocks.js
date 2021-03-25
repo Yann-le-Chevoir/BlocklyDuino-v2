@@ -46,6 +46,9 @@ Blockly.Themes.Classic.blockStyles['ev3_master_blocks'] = {
 Blockly.Themes.Classic.blockStyles['attiny85_blocks'] = {
     "colourPrimary": "#0066CC"
 };
+Blockly.Themes.Classic.blockStyles['ultrason_capteur_blocks'] = {
+    "colourPrimary": "#0000FF"
+};
 Blockly.Themes.Classic.blockStyles['seeed_blocks'] = {
     "colourPrimary": "#91C11E"
 };

@@ -293,7 +293,6 @@ Blockly.Blocks['virus_attiny85_set_colour'] = {
     }
 };
 
-
 Blockly.Blocks['virus_attiny85_set_output'] = {
     init: function () {
         this.appendDummyInput()
@@ -308,5 +307,32 @@ Blockly.Blocks['virus_attiny85_set_output'] = {
         this.setTooltip(Blockly.Msg.VIRUS_ATTINY85_SET_OUTPUT_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.VIRUS_ATTINY85_SET_OUTPUT_HELPURL);
         this.setStyle('output_blocks');
+    }
+};
+
+Blockly.Blocks['virus_ultrason_capteur_init'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField(Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_INIT)
+                .appendField(new Blockly.FieldDropdown(profile.default.dropdownDigital), "NUM")
+                .appendField(Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_INIT2)
+                .appendField(new Blockly.FieldDropdown(profile.default.dropdownDigital), "ECHO")
+                .appendField(Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_INIT3)
+                .appendField(new Blockly.FieldDropdown(profile.default.dropdownDigital), "TRIGGER");
+        this.setTooltip(Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_INIT_TOOLTIP);
+        this.setHelpUrl(Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_INIT_HELPURL);
+        this.setStyle('ultrason_capteur_blocks');
+    }
+};
+
+Blockly.Blocks['virus_ultrason_capteur_get_distance'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField(Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_GET_DISTANCE)
+                .appendField(new Blockly.FieldDropdown(profile.default.dropdownDigital), "NUM");
+        this.setOutput(true, intCompatibility);
+        this.setTooltip(Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_GET_DISTANCE_TOOLTIP);
+        this.setHelpUrl(Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_GET_DISTANCE_HELPURL);
+        this.setStyle('input_blocks');
     }
 };

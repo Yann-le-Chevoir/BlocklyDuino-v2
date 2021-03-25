@@ -37,6 +37,9 @@ Blockly.Themes.Classic.categoryStyles['ev3_master_category'] = {
 Blockly.Themes.Classic.categoryStyles['attiny85_category'] = {
     "colour": "#0066CC"
 };
+Blockly.Themes.Classic.categoryStyles['ultrason_capteur_category'] = {
+    "colour": "#0000FF"
+};
 Blockly.Themes.Classic.categoryStyles['seeed_category'] = {
     "colour": "#91C11E"
 };

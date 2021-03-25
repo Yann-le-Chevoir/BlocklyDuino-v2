@@ -119,7 +119,7 @@ Blockly.Msg.VIRUS_MP3_PLAY_PREV_TOOLTIP = "";
 Blockly.Msg.VIRUS_MP3_PLAY_PREV_HELPURL = "";
 
 Blockly.Msg.VIRUS_MP3_PLAY_TRACK = "🎵 Démarrer la musique";
-Blockly.Msg.VIRUS_MP3_PLAY_TRACK2 = "numéro (0~255)";
+Blockly.Msg.VIRUS_MP3_PLAY_TRACK2 = "numéro (1~255)";
 Blockly.Msg.VIRUS_MP3_PLAY_TRACK_TOOLTIP = "";
 Blockly.Msg.VIRUS_MP3_PLAY_TRACK_HELPURL = "";
 
@@ -198,6 +198,16 @@ Blockly.Msg.VIRUS_ATTINY85_SET_OUTPUT = "Mettre la sortie";
 Blockly.Msg.VIRUS_ATTINY85_SET_OUTPUT2 = "à la valeur (0~255)";
 Blockly.Msg.ATTINY85_SET_OUTPUT_TOOLTIP = "";
 Blockly.Msg.VATTINY85_SET_OUTPUT_HELPURL = "";
+
+Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_INIT = "Initialiser le capteur de distance 👀";
+Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_INIT2 = "branché sur les broches (ECHO)";
+Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_INIT3 = "et (TRIG)";
+Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_INIT_TOOLTIP = "";
+Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_INIT_HELPURL = "";
+
+Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_GET_DISTANCE = "la valeur du capteur de distance";
+Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_GET_DISTANCE_TOOLTIP = "";
+Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_GET_DISTANCE_HELPURL = "";
 
 //X-NUCLEO-IKS01A3 shield blocks: the X-NUCLEO-IKS01A3 is a motion MEMS and environmental sensor evaluation board system, for ST Nucleo boards.
 Blockly.Msg.X_NUCLEO_IKS01A3_Temp_Read_INPUT = "valeur de la température";

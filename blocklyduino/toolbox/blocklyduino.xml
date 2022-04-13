@@ -533,6 +533,38 @@
     <block type="virus_ultrason_capteur_get_distance"></block>
   </category>
   <sep></sep>
+  <category name="%{BKY_CAT_VIRUS_WS2812B}" categorystyle="ws2812b_category">
+    <block type="virus_ws2812b_init">
+      <value name="NUM_LEDS">
+        <block type="math_number">
+          <field name="NUM">10</field>
+        </block>
+      </value>
+    </block>
+    <block type="virus_ws2812b_set_clour">
+      <value name="NUM">
+        <block type="math_number">
+          <field name="NUM">1</field>
+        </block>
+      </value>
+      <value name="R">
+        <block type="math_number">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+      <value name="G">
+        <block type="math_number">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+      <value name="B">
+        <block type="math_number">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+    </block>
+  </category>
+  <sep></sep>
   <category name="%{BKY_CAT_VIRUS_ATTINY85}" categorystyle="attiny85_category">
     <block type="virus_attiny85_init"></block>
     <block type="virus_attiny85_button"></block>

@@ -25,6 +25,7 @@ Blockly.Msg.CAT_VIRUS_I2C_SLAVE = "📥 Contrôleur secondaire I2C";
 Blockly.Msg.CAT_VIRUS_EV3_MASTER = "🎅 Brique EV3 (USB)";
 Blockly.Msg.CAT_VIRUS_ATTINY85 = "🛰️ ATtiny85";
 Blockly.Msg.CAT_VIRUS_ULTRASON_CAPTEUR = "👀 Capteur de distance";
+Blockly.Msg.CAT_VIRUS_WS2812B = "🌞 Ruban de DEL";
 Blockly.Msg.CAT_BOARD_SERIAL = "communication série";
 Blockly.Msg.CAT_IKS01A3 = "X-NUCLEO-IKS01A3";
 Blockly.Msg.CAT_SERVO = "🕹️ Servomoteurs";

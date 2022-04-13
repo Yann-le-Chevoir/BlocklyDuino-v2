@@ -209,6 +209,18 @@ Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_GET_DISTANCE = "la valeur du capteur de dista
 Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_GET_DISTANCE_TOOLTIP = "";
 Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_GET_DISTANCE_HELPURL = "";
 
+Blockly.Msg.VIRUS_WS2812B_INIT = "Initialiser le ruban de DEL branché sur la broche";
+Blockly.Msg.VIRUS_WS2812B_INIT2 = "avec (nombre de DELs) 🌞";
+Blockly.Msg.VIRUS_WS2812B_INIT_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_INIT_HELPURL = "";
+
+Blockly.Msg.VIRUS_WS2812B_SET_COLOUR = "Mettre la DEL numéro";
+Blockly.Msg.VIRUS_WS2812B_SET_COLOUR2 = "à rouge =";
+Blockly.Msg.VIRUS_WS2812B_SET_COLOUR3 = ", vert =";
+Blockly.Msg.VIRUS_WS2812B_SET_COLOUR4 = ", bleu =";
+Blockly.Msg.VIRUS_WS2812B_SET_COLOUR_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_SET_COLOUR_HELPURL = "";
+
 //X-NUCLEO-IKS01A3 shield blocks: the X-NUCLEO-IKS01A3 is a motion MEMS and environmental sensor evaluation board system, for ST Nucleo boards.
 Blockly.Msg.X_NUCLEO_IKS01A3_Temp_Read_INPUT = "valeur de la température";
 Blockly.Msg.X_NUCLEO_IKS01A3_Temp_Read_TOOLTIP = "HTS221: capteur de la carte, renvoie la température en °Celsius";

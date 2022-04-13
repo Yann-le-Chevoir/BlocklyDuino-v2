@@ -183,3 +183,26 @@ Blockly.Arduino['virus_ultrason_capteur_get_distance'] = function (block) {
     var code = 'ultrason_capteurs[' + num + '].getDistance()';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
+
+Blockly.Arduino['virus_ws2812b_init'] = function (block) {
+    var ledPin = block.getFieldValue('LED_PIN');
+    var numLeds = Blockly.Arduino.valueToCode(this, 'NUM_LEDS', Blockly.Arduino.ORDER_ATOMIC);
+
+    Blockly.Arduino.includes_['includes_fast_led'] = '#include <FastLED.h>';
+    Blockly.Arduino.definitions_['var_virus_ws2812b_led_pin'] = '#define LED_PIN ' + ledPin;
+    Blockly.Arduino.definitions_['var_virus_ws2812b_num_leds'] = '#define NUM_LEDS ' + numLeds;
+    Blockly.Arduino.definitions_['var_virus_ws2812b_init'] = 'CRGB leds[NUM_LEDS];';
+    Blockly.Arduino.setups_['setup_virus_attiny85_init'] = 'FastLED.addLeds<WS2812B, LED_PIN, GRB>(leds, NUM_LEDS);';
+
+    var code = '';
+    return code;
+};
+
+Blockly.Arduino['virus_ws2812b_set_colour'] = function (block) {
+    var num = Blockly.Arduino.valueToCode(this, 'NUM', Blockly.Arduino.ORDER_ATOMIC);
+    var r = Blockly.Arduino.valueToCode(this, 'R', Blockly.Arduino.ORDER_ATOMIC);
+    var g = Blockly.Arduino.valueToCode(this, 'G', Blockly.Arduino.ORDER_ATOMIC);
+    var b = Blockly.Arduino.valueToCode(this, 'B', Blockly.Arduino.ORDER_ATOMIC);
+    var code = 'leds[' + (Number(num)-1).toString() + '] = CRGB(' + r + ', ' + g + ', ' + b + ');\nFastLED.show();\n';
+    return code;
+};

@@ -336,3 +336,41 @@ Blockly.Blocks['virus_ultrason_capteur_get_distance'] = {
         this.setStyle('input_blocks');
     }
 };
+
+Blockly.Blocks['virus_ws2812b_init'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField(Blockly.Msg.VIRUS_WS2812B_INIT)
+                .appendField(new Blockly.FieldDropdown(profile.default.dropdownDigital), "LED_PIN");
+        this.appendValueInput("NUM_LEDS", 'Number')
+                .appendField(Blockly.Msg.VIRUS_WS2812B_INIT2)
+                .setCheck(intCompatibility);
+        this.setTooltip(Blockly.Msg.VIRUS_WS2812B_INIT_TOOLTIP);
+        this.setHelpUrl(Blockly.Msg.VIRUS_WS2812B_INIT_HELPURL);
+        this.setStyle('ws2812b_blocks');
+    }
+};
+
+Blockly.Blocks['virus_ws2812b_set_colour'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField(Blockly.Msg.VIRUS_WS2812B_SET_COLOUR);
+        this.appendValueInput("NUM", 'Number')
+                .setCheck(intCompatibility);
+        this.appendValueInput("R", 'Number')
+                .appendField(Blockly.Msg.VIRUS_WS2812B_SET_COLOUR2)
+                .setCheck(intCompatibility);
+        this.appendValueInput("G", 'Number')
+                .appendField(Blockly.Msg.VIRUS_WS2812B_SET_COLOUR3)
+                .setCheck(intCompatibility);
+        this.appendValueInput("B", 'Number')
+                .appendField(Blockly.Msg.VIRUS_WS2812B_SET_COLOUR4)
+                .setCheck(intCompatibility);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.VIRUS_WS2812B_SET_COLOUR_TOOLTIP);
+        this.setHelpUrl(Blockly.Msg.VIRUS_WS2812B_SET_COLOUR_HELPURL);
+        this.setStyle('output_blocks');
+    }
+};

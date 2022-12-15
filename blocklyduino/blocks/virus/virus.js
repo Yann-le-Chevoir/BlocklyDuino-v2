@@ -351,6 +351,20 @@ Blockly.Blocks['virus_ws2812b_init'] = {
     }
 };
 
+Blockly.Blocks['virus_ws2812b_set_intensity'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField(Blockly.Msg.VIRUS_WS2812B_SET_INTENSITY);
+        this.appendValueInput("NUM", 'Number')
+                .setCheck(intCompatibility);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.VIRUS_WS2812B_SET_INTENSITY_TOOLTIP);
+        this.setHelpUrl(Blockly.Msg.VIRUS_WS2812B_SET_INTENSITY_HELPURL);
+        this.setStyle('output_blocks');
+    }
+};
+
 Blockly.Blocks['virus_ws2812b_set_colour'] = {
     init: function () {
         this.appendDummyInput()
@@ -372,5 +386,34 @@ Blockly.Blocks['virus_ws2812b_set_colour'] = {
         this.setTooltip(Blockly.Msg.VIRUS_WS2812B_SET_COLOUR_TOOLTIP);
         this.setHelpUrl(Blockly.Msg.VIRUS_WS2812B_SET_COLOUR_HELPURL);
         this.setStyle('output_blocks');
+    }
+};
+
+Blockly.Blocks['virus_ws2812b_demo_mode'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField(Blockly.Msg.VIRUS_WS2812B_DEMO_MODE);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.VIRUS_WS2812B_DEMO_MODE_TOOLTIP);
+        this.setHelpUrl(Blockly.Msg.VIRUS_WS2812B_DEMO_MODE_HELPURL);
+        this.setStyle('ws2812b_blocks');
+    }
+};
+
+Blockly.Blocks['virus_math_random_int'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField(Blockly.Msg.VIRUS_MATH_RANDOM_INT);
+        this.appendValueInput("FROM", 'Number')
+                .setCheck(intCompatibility);
+        this.appendValueInput("TO", 'Number')
+                .appendField(Blockly.Msg.VIRUS_MATH_RANDOM_INT2)
+                .setCheck(intCompatibility);
+        this.setOutput(true, intCompatibility);
+        this.setInputsInline(true);
+        this.setTooltip(Blockly.Msg.VIRUS_MATH_RANDOM_INT_TOOLTIP);
+        this.setHelpUrl(Blockly.Msg.VIRUS_MATH_RANDOM_INT_HELPURL);
+        this.setStyle('math_blocks');
     }
 };

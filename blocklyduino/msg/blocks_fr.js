@@ -214,12 +214,25 @@ Blockly.Msg.VIRUS_WS2812B_INIT2 = "avec (nombre de DELs) 🌞";
 Blockly.Msg.VIRUS_WS2812B_INIT_TOOLTIP = "";
 Blockly.Msg.VIRUS_WS2812B_INIT_HELPURL = "";
 
+Blockly.Msg.VIRUS_WS2812B_SET_INTENSITY = "Mettre l'intensité (valeur entre 0 et 1) à";
+Blockly.Msg.VIRUS_WS2812B_SET_INTENSITY_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_SET_INTENSITY_HELPURL = "";
+
 Blockly.Msg.VIRUS_WS2812B_SET_COLOUR = "Mettre la DEL numéro";
 Blockly.Msg.VIRUS_WS2812B_SET_COLOUR2 = "à rouge =";
 Blockly.Msg.VIRUS_WS2812B_SET_COLOUR3 = ", vert =";
 Blockly.Msg.VIRUS_WS2812B_SET_COLOUR4 = ", bleu =";
 Blockly.Msg.VIRUS_WS2812B_SET_COLOUR_TOOLTIP = "";
 Blockly.Msg.VIRUS_WS2812B_SET_COLOUR_HELPURL = "";
+
+Blockly.Msg.VIRUS_WS2812B_DEMO_MODE = "Code de démo";
+Blockly.Msg.VIRUS_WS2812B_DEMO_MODE_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_DEMO_MODE_HELPURL = "";
+
+Blockly.Msg.VIRUS_MATH_RANDOM_INT = "Entier aléatoire entre";
+Blockly.Msg.VIRUS_MATH_RANDOM_INT2 = "et";
+Blockly.Msg.VIRUS_MATH_RANDOM_INT_TOOLTIP = "";
+Blockly.Msg.VIRUS_MATH_RANDOM_INT_HELPURL = "";
 
 //X-NUCLEO-IKS01A3 shield blocks: the X-NUCLEO-IKS01A3 is a motion MEMS and environmental sensor evaluation board system, for ST Nucleo boards.
 Blockly.Msg.X_NUCLEO_IKS01A3_Temp_Read_INPUT = "valeur de la température";

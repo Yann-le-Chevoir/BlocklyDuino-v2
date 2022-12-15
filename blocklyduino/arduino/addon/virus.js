@@ -192,9 +192,15 @@ Blockly.Arduino['virus_ws2812b_init'] = function (block) {
     Blockly.Arduino.definitions_['var_virus_ws2812b_led_pin'] = '#define LED_PIN ' + ledPin;
     Blockly.Arduino.definitions_['var_virus_ws2812b_num_leds'] = '#define NUM_LEDS ' + numLeds;
     Blockly.Arduino.definitions_['var_virus_ws2812b_init'] = 'CRGB leds[NUM_LEDS];';
-    Blockly.Arduino.setups_['setup_virus_attiny85_init'] = 'FastLED.addLeds<WS2812B, LED_PIN, GRB>(leds, NUM_LEDS);';
+    Blockly.Arduino.setups_['setup_virus_attiny85_init'] = 'FastLED.addLeds<WS2812B, LED_PIN, GRB>(leds, NUM_LEDS)\n    .setCorrection(TypicalLEDStrip)\n    .setDither(true);\n';
 
     var code = '';
+    return code;
+};
+
+Blockly.Arduino['virus_ws2812b_set_intensity'] = function (block) {
+    var num = Blockly.Arduino.valueToCode(this, 'NUM', Blockly.Arduino.ORDER_ATOMIC);
+    var code = 'FastLED.setBrightness(255*' + num + ');\nFastLED.show();\n';
     return code;
 };
 
@@ -203,6 +209,20 @@ Blockly.Arduino['virus_ws2812b_set_colour'] = function (block) {
     var r = Blockly.Arduino.valueToCode(this, 'R', Blockly.Arduino.ORDER_ATOMIC);
     var g = Blockly.Arduino.valueToCode(this, 'G', Blockly.Arduino.ORDER_ATOMIC);
     var b = Blockly.Arduino.valueToCode(this, 'B', Blockly.Arduino.ORDER_ATOMIC);
-    var code = 'leds[' + (Number(num)-1).toString() + '] = CRGB(' + r + ', ' + g + ', ' + b + ');\nFastLED.show();\n';
+    //var code = 'leds[' + num + '-1] = CRGB(' + r + '*intensity, ' + g + '*intensity, ' + b + '*intensity);\nFastLED.show();\n';
+    //No FastLED.show() and so setIntensity() is required
+    var code = 'leds[' + num + '-1] = CRGB(' + r + ', ' + g + ', ' + b + ');\n';
     return code;
+};
+
+Blockly.Arduino['virus_ws2812b_demo_mode'] = function (block) {
+	var code = 'static uint16_t sPseudotime = 0;\nstatic uint16_t sLastMillis = 0;\nstatic uint16_t sHue16 = 0;\nuint8_t sat8 = beatsin88( 87, 220, 250);\nuint8_t brightdepth = beatsin88(341, 96, 224);\nuint16_t brightnessthetainc16 = beatsin88(203, (25 * 256), (40 * 256));\nuint8_t msmultiplier = beatsin88(147, 23, 60);\nuint16_t hue16 = sHue16;\nuint16_t hueinc16 = beatsin88(113, 1, 3000);\nuint16_t ms = millis();\nuint16_t deltams = ms - sLastMillis ;\nsLastMillis  = ms;\nsPseudotime += deltams * msmultiplier;\nsHue16 += deltams * beatsin88( 400, 5,9);\nuint16_t brightnesstheta16 = sPseudotime;\nfor(uint16_t i = 0 ; i < NUM_LEDS; i++) {\nhue16 += hueinc16;\nuint8_t hue8 = hue16 / 256;\nbrightnesstheta16  += brightnessthetainc16;\nuint16_t b16 = sin16( brightnesstheta16  ) + 32768;\nuint16_t bri16 = (uint32_t)((uint32_t)b16 * (uint32_t)b16) / 65536;\nuint8_t bri8 = (uint32_t)(((uint32_t)bri16) * brightdepth) / 65536;\nbri8 += (255 - brightdepth);\nCRGB newcolor = CHSV( hue8, sat8, bri8);\nuint16_t pixelnumber = i;\npixelnumber = (NUM_LEDS-1) - pixelnumber;\nnblend( leds[pixelnumber], newcolor, 64);\n}';
+    return code;
+};
+
+Blockly.Arduino['virus_math_random_int'] = function (block) {
+    var from = Blockly.Arduino.valueToCode(this, 'FROM', Blockly.Arduino.ORDER_ATOMIC);
+    var to = Blockly.Arduino.valueToCode(this, 'TO', Blockly.Arduino.ORDER_ATOMIC);
+    var code = 'random(' + from + ', ' + to + ')';
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
 };

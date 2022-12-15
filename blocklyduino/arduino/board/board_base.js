@@ -54,7 +54,7 @@ Blockly.Arduino['board_base_inout_analog_write'] = function (block) {
 Blockly.Arduino['board_base_inout_analog_read'] = function (block) {
     var dropdown_pin = block.getFieldValue('PIN');
     //Blockly.Arduino.setups_['setup_input_'+dropdown_pin] = 'pinMode('+dropdown_pin+', INPUT);';
-    var code = 'analogRead(' + dropdown_pin + ')';
+    var code = '(float)analogRead(' + dropdown_pin + ')';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 

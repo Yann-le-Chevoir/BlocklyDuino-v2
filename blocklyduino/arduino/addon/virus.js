@@ -188,13 +188,124 @@ Blockly.Arduino['virus_ws2812b_init'] = function (block) {
     var ledPin = block.getFieldValue('LED_PIN');
     var numLeds = Blockly.Arduino.valueToCode(this, 'NUM_LEDS', Blockly.Arduino.ORDER_ATOMIC);
 
-    Blockly.Arduino.includes_['includes_fast_led'] = '#include <FastLED.h>';
+    Blockly.Arduino.includes_['includes_fast_led'] = 'extern "C" {\n'
+    + '  volatile unsigned long timer0_millis = 0;\n'
+    + '};\n'
+    + '#include <FastLED.h>';
     Blockly.Arduino.definitions_['var_virus_ws2812b_led_pin'] = '#define LED_PIN ' + ledPin;
     Blockly.Arduino.definitions_['var_virus_ws2812b_num_leds'] = '#define NUM_LEDS ' + numLeds;
     Blockly.Arduino.definitions_['var_virus_ws2812b_init'] = 'CRGB leds[NUM_LEDS];';
+    Blockly.Arduino.definitions_['var_virus_ws2812b_init_palette'] = 'CRGBPalette16 prevPalette = RainbowColors_p;\n'
+    + 'CRGBPalette16 currentPalette;\n'
+    + 'TBlendType    currentBlending = LINEARBLEND;\n'
+    + 'uint8_t brightness = 255;\n'
+    + 'bool is_allume = false;\n'
+    + 'uint8_t updates_per_second = 100;\n'
+    + 'static uint8_t startIndex = 0;\n'
+    + 'unsigned long ledCurrentTime, ledPrevTime = 0;';
+    Blockly.Arduino.codeFunctions_['functions_ws2812b_palette'] = 'void allumer()\n'
+    + '{\n'
+    + '  currentPalette = prevPalette;\n'
+    + '  is_allume = true;\n'
+    + '}\n'
+    + 'void eteindre()\n'
+    + '{\n'
+    + '  prevPalette = currentPalette;\n'
+    + '  led_fill_solid(CRGB::Black);\n'
+    + '  is_allume = false;\n'
+    + '}\n'
+    + 'void led_fill_solid(CRGB color)\n'
+    + '{\n'
+    + '  fill_solid(currentPalette, 16, color);\n'
+    + '  currentBlending = LINEARBLEND;\n'
+    + '  is_allume = true;\n'
+    + '}\n'
+    + 'void led_fill_solid(uint8_t ir, uint8_t ig, uint8_t ib)\n'
+    + '{\n'
+    + '  led_fill_solid(CRGB(ir, ig, ib));\n'
+    + '}\n'
+    + 'void led_rainbow()\n'
+    + '{\n'
+    + '  currentPalette = RainbowColors_p;\n'
+    + '  currentBlending = LINEARBLEND;\n'
+    + '  is_allume = true;\n'
+    + '}\n'
+    + 'void led_rainbow2()\n'
+    + '{\n'
+    + '  currentPalette = RainbowStripeColors_p;\n'
+    + '  currentBlending = NOBLEND;\n'
+    + '  is_allume = true;\n'
+    + '}\n'
+    + 'void led_rainbow3()\n'
+    + '{\n'
+    + '  currentPalette = RainbowStripeColors_p;\n'
+    + '  currentBlending = LINEARBLEND;\n'
+    + '  is_allume = true;\n'
+    + '}\n'
+    + 'void led_ocean()\n'
+    + '{\n'
+    + '  currentPalette = OceanColors_p;\n'
+    + '  currentBlending = LINEARBLEND;\n'
+    + '  is_allume = true;\n'
+    + '}\n'
+    + 'void led_nuages()\n'
+    + '{\n'
+    + '  currentPalette = CloudColors_p;\n'
+    + '  currentBlending = LINEARBLEND;\n'
+    + '  is_allume = true;\n'
+    + '}\n'
+    + 'void led_lave()\n'
+    + '{\n'
+    + '  currentPalette = LavaColors_p;\n'
+    + '  currentBlending = LINEARBLEND;\n'
+    + '  is_allume = true;\n'
+    + '}\n'
+    + 'void led_foret()\n'
+    + '{\n'
+    + '  currentPalette = ForestColors_p;\n'
+    + '  currentBlending = LINEARBLEND;\n'
+    + '  is_allume = true;\n'
+    + '}\n'
+    + 'void led_party()\n'
+    + '{\n'
+    + '  currentPalette = PartyColors_p;\n'
+    + '  currentBlending = LINEARBLEND;\n'
+    + '  is_allume = true;\n'
+    + '}\n'
+    + 'void FillLEDsFromPaletteColors(uint8_t colorIndex)\n'
+    + '{\n'
+    + '  for (uint8_t i = 0; i < NUM_LEDS; ++i)\n'
+    + '  {\n'
+    + '    leds[i] = ColorFromPalette(currentPalette, colorIndex, brightness, currentBlending);\n'
+    + '    colorIndex += 3;\n'
+    + '  }\n'
+    + '}';
     Blockly.Arduino.setups_['setup_virus_attiny85_init'] = 'FastLED.addLeds<WS2812B, LED_PIN, GRB>(leds, NUM_LEDS)\n    .setCorrection(TypicalLEDStrip)\n    .setDither(true);\n';
 
-    var code = '';
+    var code = 'delay(10);\n'
+    + 'ledCurrentTime = millis();\n'
+    + 'if (ledCurrentTime > ledPrevTime + (1000 / updates_per_second))\n'
+    + '{\n'
+    + '  startIndex = startIndex + 1; /* motion speed */\n'
+    + '  FillLEDsFromPaletteColors(startIndex);\n'
+    + '  FastLED.show();\n'
+    + '  ledPrevTime = ledCurrentTime;\n'
+    + '}\n';
+    return code;
+};
+
+Blockly.Arduino['virus_ws2812b_allumer'] = function (block) {
+    var code = 'allumer();\n';
+    return code;
+};
+
+Blockly.Arduino['virus_ws2812b_is_allume'] = function (block) {
+    var code = 'is_allume';
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino['virus_ws2812b_eteindre'] = function (block) {
+    var code = 'eteindre();\n';
     return code;
 };
 
@@ -204,14 +315,53 @@ Blockly.Arduino['virus_ws2812b_set_intensity'] = function (block) {
     return code;
 };
 
+Blockly.Arduino['virus_ws2812b_get_brightness'] = function (block) {
+    var code = 'brightness';
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino['virus_ws2812b_set_brightness'] = function (block) {
+    var data = Blockly.Arduino.valueToCode(this, 'DATA', Blockly.Arduino.ORDER_ATOMIC);
+    var code = 'brightness = ' + data + ';\n';
+    return code;
+};
+
+Blockly.Arduino['virus_ws2812b_get_frequence'] = function (block) {
+    var code = 'updates_per_second';
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino['virus_ws2812b_set_frequence'] = function (block) {
+    var data = Blockly.Arduino.valueToCode(this, 'DATA', Blockly.Arduino.ORDER_ATOMIC);
+    var code = 'updates_per_second = ' + data + ';\n';
+    return code;
+};
+
 Blockly.Arduino['virus_ws2812b_set_colour'] = function (block) {
     var num = Blockly.Arduino.valueToCode(this, 'NUM', Blockly.Arduino.ORDER_ATOMIC);
     var r = Blockly.Arduino.valueToCode(this, 'R', Blockly.Arduino.ORDER_ATOMIC);
     var g = Blockly.Arduino.valueToCode(this, 'G', Blockly.Arduino.ORDER_ATOMIC);
     var b = Blockly.Arduino.valueToCode(this, 'B', Blockly.Arduino.ORDER_ATOMIC);
-    //var code = 'leds[' + num + '-1] = CRGB(' + r + '*intensity, ' + g + '*intensity, ' + b + '*intensity);\nFastLED.show();\n';
     //No FastLED.show() and so setIntensity() is required
     var code = 'leds[' + num + '-1] = CRGB(' + r + ', ' + g + ', ' + b + ');\n';
+    return code;
+};
+
+Blockly.Arduino['virus_ws2812b_set_colour2'] = function (block) {
+    var num = Blockly.Arduino.valueToCode(this, 'NUM', Blockly.Arduino.ORDER_ATOMIC);
+    var r = block.getFieldValue('R');
+    var g = block.getFieldValue('G');
+    var b = block.getFieldValue('B');
+    //No FastLED.show() and so setIntensity() is required
+    var code = 'leds[' + num + '-1] = CRGB(' + r + ', ' + g + ', ' + b + ');\n';
+    return code;
+};
+
+Blockly.Arduino['virus_ws2812b_set_colour_palette'] = function (block) {
+    var r = block.getFieldValue('R');
+    var g = block.getFieldValue('G');
+    var b = block.getFieldValue('B');
+    var code = 'led_fill_solid(' + r + ', ' + g + ', ' + b + ');\n';
     return code;
 };
 
@@ -225,4 +375,198 @@ Blockly.Arduino['virus_math_random_int'] = function (block) {
     var to = Blockly.Arduino.valueToCode(this, 'TO', Blockly.Arduino.ORDER_ATOMIC);
     var code = 'random(' + from + ', ' + to + ')';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino['virus_logic_compare'] = function (block) {
+    var argument0 = Blockly.Arduino.valueToCode(this, 'A', Blockly.Arduino.ORDER_ATOMIC) || '0';
+    var argument1 = block.getFieldValue('B');
+    var code = argument0 + ' == ' + argument1;
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino['virus_ir_init'] = function (block) {
+    var irPin = block.getFieldValue('IR_PIN');
+
+    // Garder les mêmes noms que dans virus_ir_on_button FieldDropdown BUTTON
+    // Tous les initialiser vides ici pour que ça compile
+    // Atention, le bloc virus_ir_init doit être crée plus haut que les blocs virus_ir_on_button
+    Blockly.Arduino.codeFunctions_['function_do_on_zero'] = 'void do_on_zero() {}';
+    Blockly.Arduino.codeFunctions_['function_do_on_un'] = 'void do_on_un() {}';
+    Blockly.Arduino.codeFunctions_['function_do_on_deux'] = 'void do_on_deux() {}';
+    Blockly.Arduino.codeFunctions_['function_do_on_trois'] = 'void do_on_trois() {}';
+    Blockly.Arduino.codeFunctions_['function_do_on_quatre'] = 'void do_on_quatre() {}';
+    Blockly.Arduino.codeFunctions_['function_do_on_cinq'] = 'void do_on_cinq() {}';
+    Blockly.Arduino.codeFunctions_['function_do_on_six'] = 'void do_on_six() {}';
+    Blockly.Arduino.codeFunctions_['function_do_on_sept'] = 'void do_on_sept() {}';
+    Blockly.Arduino.codeFunctions_['function_do_on_huit'] = 'void do_on_huit() {}';
+    Blockly.Arduino.codeFunctions_['function_do_on_neuf'] = 'void do_on_neuf() {}';
+    Blockly.Arduino.codeFunctions_['function_do_on_etoile'] = 'void do_on_etoile() {}';
+    Blockly.Arduino.codeFunctions_['function_do_on_diese'] = 'void do_on_diese() {}';
+    Blockly.Arduino.codeFunctions_['function_do_on_ok'] = 'void do_on_ok() {}';
+    Blockly.Arduino.codeFunctions_['function_do_on_gauche'] = 'void do_on_gauche() {}';
+    Blockly.Arduino.codeFunctions_['function_do_on_droite'] = 'void do_on_droite() {}';
+    Blockly.Arduino.codeFunctions_['function_do_on_haut'] = 'void do_on_haut() {}';
+    Blockly.Arduino.codeFunctions_['function_do_on_bas'] = 'void do_on_bas() {}';
+
+    Blockly.Arduino.includes_['includes_tiny_ir_receiver'] = '#define IR_RECEIVE_PIN ' + irPin + '\n#define NO_LED_FEEDBACK_CODE\n#include "TinyIRReceiver.hpp"';
+
+    //                                                                             0     1     2     3     4     5     6     7    8     9    *     #    haut  ga   dr    bas   ok
+    Blockly.Arduino.definitions_['var_virus_ir_value'] = 'const uint8_t value[] = {0x19, 0x45, 0x46, 0x47, 0x44, 0x40, 0x43, 0x7, 0x15, 0x9, 0x16, 0xD, 0x18, 0x8, 0x5A, 0x52, 0x1C};\n'
+    + '#define ETOILE 10\n'
+    + '#define DIESE 11\n'
+    + '#define HAUT 12\n'
+    + '#define GAUCHE 13\n'
+    + '#define DROITE 14\n'
+    + '#define BAS 15\n'
+    + '#define OK 16\n'
+    + 'volatile uint8_t data;\n'
+    + 'volatile bool newData = false;\n'
+    + 'uint8_t cpt = 0;\n';
+    Blockly.Arduino.setups_['setup_virus_ir_init'] = 'initPCIInterruptForTinyReceiver();\n';
+
+    Blockly.Arduino.codeFunctions_['function_ir_receive_data'] = '\nvoid handleReceivedTinyIRData(uint8_t aAddress, uint8_t aCommand, uint8_t aFlags)\n'
+    + '{\n'
+    + '  //if (aFlags == IRDATA_FLAGS_IS_REPEAT)\n'
+    + '  if (newData)\n'
+    + '  {\n'
+    + '    return;\n'
+    + '  }\n'
+    + '  for (cpt = 0; cpt < sizeof(value)/sizeof(uint8_t); cpt++)\n'
+    + '  {\n'
+    + '    if (value[cpt] == aCommand)\n'
+    + '    {\n'
+    + '      data = cpt;\n'
+    + '      newData = true;\n'
+    + '      return;\n'
+    + '    }\n'
+    + '  }\n'
+    + '};';
+
+    var code = 'if (newData)\n'
+    + '{\n'
+    + '  newData = false;\n'
+    + '  switch (data)\n'
+    + '  {\n'
+    + '    case 0:\n'
+    + '      do_on_zero();\n'
+    + '      break;\n'
+    + '    case 1:\n'
+    + '      do_on_un();\n'
+    + '      break;\n'
+    + '    case 2:\n'
+    + '      do_on_deux();\n'
+    + '      break;\n'
+    + '    case 3:\n'
+    + '      do_on_trois();\n'
+    + '      break;\n'
+    + '    case 4:\n'
+    + '      do_on_quatre();\n'
+    + '      break;\n'
+    + '    case 5:\n'
+    + '      do_on_cinq();\n'
+    + '      break;\n'
+    + '    case 6:\n'
+    + '      do_on_six();\n'
+    + '      break;\n'
+    + '    case 7:\n'
+    + '      do_on_sept();\n'
+    + '      break;\n'
+    + '    case 8:\n'
+    + '      do_on_huit();\n'
+    + '      break;\n'
+    + '    case 9:\n'
+    + '      do_on_neuf();\n'
+    + '      break;\n'
+    + '    case ETOILE:\n'
+    + '      do_on_etoile();\n'
+    + '      break;\n'
+    + '    case DIESE:\n'
+    + '      do_on_diese();\n'
+    + '      break;\n'
+    + '    case HAUT:\n'
+    + '      do_on_haut();\n'
+    + '      break;\n'
+    + '    case GAUCHE:\n'
+    + '      do_on_gauche();\n'
+    + '      break;\n'
+    + '    case DROITE:\n'
+    + '      do_on_droite();\n'
+    + '      break;\n'
+    + '    case BAS:\n'
+    + '      do_on_bas();\n'
+    + '      break;\n'
+    + '    case OK:\n'
+    + '      do_on_ok();\n'
+    + '      break;\n'
+    + '    default:\n'
+    + '      break;\n'
+    + '  }\n'
+    + '}\n';
+    return code;
+};
+
+Blockly.Arduino['virus_ir_on_button'] = function (block) {
+    var button = block.getFieldValue('BUTTON');
+    var branch = Blockly.Arduino.statementToCode(block, 'DO');
+    Blockly.Arduino.codeFunctions_['function_do_on_' + button] = 'void do_on_'+ button + '() {\n'
+        + branch
+        +'\n}';
+    var code = '';
+    return code;
+};
+
+Blockly.Arduino['virus_capteur_son_init'] = function (block) {
+    var capteurSonPin = block.getFieldValue('CAPTEUR_SON_PIN');
+    var nb = Blockly.Arduino.valueToCode(this, 'NB', Blockly.Arduino.ORDER_ATOMIC);
+    var min = Blockly.Arduino.valueToCode(this, 'MIN', Blockly.Arduino.ORDER_ATOMIC);
+    var max = Blockly.Arduino.valueToCode(this, 'MAX', Blockly.Arduino.ORDER_ATOMIC);
+
+    Blockly.Arduino.codeFunctions_['function_do_on_capteur'] = 'void do_on_capteur() {}';
+
+    Blockly.Arduino.definitions_['var_virus_capteur_son'] = '#define CAPTEUR_PIN ' + capteurSonPin
+                                                          + '\nvolatile bool capteur = false;'
+                                                          + '\nvolatile unsigned long capteurCurrentTime, capteurPrevTime = 0;'
+                                                          + '\nvolatile uint8_t capteurSonCompteur = 0;'
+                                                          + '\n#define NUMBER_COUP_CAPTEUR_SON ' + nb
+                                                          + '\n#define MIN_TIME_COUP_CAPTEUR_SON ' + min
+                                                          + '\n#define MAX_TIME_COUP_CAPTEUR_SON ' + max;
+    Blockly.Arduino.setups_['setup_virus_capteur_son_init'] = 'sei();     //enabling global interrupt\n'
+    + '  GIMSK |= (1<<INT0);     // enabling the INT0 (external interrupt)\n'
+    + '  MCUCR |= (1<<ISC01);    // Configuring as falling edge\n'
+    + '  pinMode(CAPTEUR_PIN, INPUT) ;\n';
+
+    Blockly.Arduino.codeFunctions_['function_capteur_son_isr'] = '\nISR (INT0_vect)\n'
+    + '{\n'
+    + '  capteurCurrentTime = millis();\n'
+    + '  if (capteurCurrentTime - capteurPrevTime < MIN_TIME_COUP_CAPTEUR_SON)\n'
+    + '  {\n'
+    + '    return;\n'
+    + '  }\n'
+    + '  if ((capteurSonCompteur > 0) && (capteurCurrentTime - capteurPrevTime > MAX_TIME_COUP_CAPTEUR_SON))\n'
+    + '  {\n'
+    + '    capteurSonCompteur = 0;\n'
+    + '  }\n'
+    + '  if (++capteurSonCompteur >= NUMBER_COUP_CAPTEUR_SON)\n'
+    + '  {\n'
+    + '    capteurSonCompteur = 0;\n'
+    + '    capteur = true;\n'
+    + '  }\n'
+    + '  capteurPrevTime = capteurCurrentTime;\n'
+    + '}\n';
+
+    var code = 'if (capteur)\n'
+    + '{\n'
+    + '  capteur = false;\n'
+    + '  do_on_capteur();\n'
+    + '}\n';
+    return code;
+};
+
+Blockly.Arduino['virus_capteur_son_on_capteur'] = function (block) {
+    var branch = Blockly.Arduino.statementToCode(block, 'DO');
+    Blockly.Arduino.codeFunctions_['function_do_on_capteur'] = 'void do_on_capteur() {\n'
+        + branch
+        +'\n}';
+    var code = '';
+    return code;
 };

@@ -43,6 +43,12 @@ Blockly.Themes.Classic.categoryStyles['ultrason_capteur_category'] = {
 Blockly.Themes.Classic.categoryStyles['ws2812b_category'] = {
     "colour": "#FF6666"
 };
+Blockly.Themes.Classic.categoryStyles['ir_category'] = {
+    "colour": "#009999"
+};
+Blockly.Themes.Classic.categoryStyles['capteur_son_category'] = {
+    "colour": "#990099"
+};
 Blockly.Themes.Classic.categoryStyles['seeed_category'] = {
     "colour": "#91C11E"
 };

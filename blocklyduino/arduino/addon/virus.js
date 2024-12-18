@@ -491,6 +491,12 @@ Blockly.Arduino['virus_math_random_int'] = function (block) {
     return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino['virus_math_dropdown_int'] = function (block) {
+    var data = block.getFieldValue('DATA');
+    var code = data;
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino['virus_logic_compare'] = function (block) {
     var argument0 = Blockly.Arduino.valueToCode(this, 'A', Blockly.Arduino.ORDER_ATOMIC) || '0';
     var argument1 = block.getFieldValue('B');

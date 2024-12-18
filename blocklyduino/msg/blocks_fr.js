@@ -303,6 +303,9 @@ Blockly.Msg.VIRUS_MATH_RANDOM_INT2 = "et";
 Blockly.Msg.VIRUS_MATH_RANDOM_INT_TOOLTIP = "";
 Blockly.Msg.VIRUS_MATH_RANDOM_INT_HELPURL = "";
 
+Blockly.Msg.VIRUS_MATH_DROPDOWN_INT_TOOLTIP = "";
+Blockly.Msg.VIRUS_MATH_DROPDOWN_INT_HELPURL = "";
+
 Blockly.Msg.VIRUS_IR_INIT = "📡 Initialiser la télécommande IR branchée sur";
 Blockly.Msg.VIRUS_IR_INIT_TOOLTIP = "";
 Blockly.Msg.VIRUS_IR_INIT_HELPURL = "";

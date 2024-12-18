@@ -209,10 +209,22 @@ Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_GET_DISTANCE = "la valeur du capteur de dista
 Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_GET_DISTANCE_TOOLTIP = "";
 Blockly.Msg.VIRUS_ULTRASON_CAPTEUR_GET_DISTANCE_HELPURL = "";
 
-Blockly.Msg.VIRUS_WS2812B_INIT = "Initialiser le ruban de DEL branché sur la broche";
-Blockly.Msg.VIRUS_WS2812B_INIT2 = "avec (nombre de DELs) 🌞";
+Blockly.Msg.VIRUS_WS2812B_INIT = "🌞 Initialiser le ruban de DEL branché sur";
+Blockly.Msg.VIRUS_WS2812B_INIT2 = "avec (nombre de DELs)";
 Blockly.Msg.VIRUS_WS2812B_INIT_TOOLTIP = "";
 Blockly.Msg.VIRUS_WS2812B_INIT_HELPURL = "";
+
+Blockly.Msg.VIRUS_WS2812B_ALLUMER = "Allumer le ruban de DEL";
+Blockly.Msg.VIRUS_WS2812B_ALLUMER_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_ALLUMER_HELPURL = "";
+
+Blockly.Msg.VIRUS_WS2812B_IS_ALLUME = "Le ruban de DEL est allumé";
+Blockly.Msg.VIRUS_WS2812B_IS_ALLUME_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_IS_ALLUME_HELPURL = "";
+
+Blockly.Msg.VIRUS_WS2812B_ETEINDRE = "Éteindre le ruban de DEL";
+Blockly.Msg.VIRUS_WS2812B_ETEINDRE_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_ETEINDRE_HELPURL = "";
 
 Blockly.Msg.VIRUS_WS2812B_SET_INTENSITY = "Mettre l'intensité (valeur entre 0 et 1) à";
 Blockly.Msg.VIRUS_WS2812B_SET_INTENSITY_TOOLTIP = "";
@@ -225,14 +237,91 @@ Blockly.Msg.VIRUS_WS2812B_SET_COLOUR4 = ", bleu =";
 Blockly.Msg.VIRUS_WS2812B_SET_COLOUR_TOOLTIP = "";
 Blockly.Msg.VIRUS_WS2812B_SET_COLOUR_HELPURL = "";
 
+Blockly.Msg.VIRUS_WS2812B_SET_COLOUR_PALETTE = "Mettre toutes les DELs à rouge =";
+Blockly.Msg.VIRUS_WS2812B_SET_COLOUR_PALETTE2 = ", vert =";
+Blockly.Msg.VIRUS_WS2812B_SET_COLOUR_PALETTE3 = ", bleu =";
+Blockly.Msg.VIRUS_WS2812B_SET_COLOUR_PALETTE_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_SET_COLOUR_PALETTE_HELPURL = "";
+
+Blockly.Msg.VIRUS_WS2812B_RGB_COLOUR = "rouge =";
+Blockly.Msg.VIRUS_WS2812B_RGB_COLOUR2 = ", vert =";
+Blockly.Msg.VIRUS_WS2812B_RGB_COLOUR3 = ", bleu =";
+Blockly.Msg.VIRUS_WS2812B_RGB_COLOUR_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_RGB_COLOUR_HELPURL = "";
+
+Blockly.Msg.VIRUS_WS2812B_COLOUR_PALETTE = "Faire une palette à partir des couleurs 🎨";
+Blockly.Msg.VIRUS_WS2812B_COLOUR_PALETTE_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_COLOUR_PALETTE_HELPURL = "";
+
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_RAINBOW = "Utiliser la palette arc-en-ciel 1 🌈";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_RAINBOW_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_RAINBOW_HELPURL = "";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_RAINBOW2 = "Utiliser la palette arc-en-ciel 2 🌈";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_RAINBOW2_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_RAINBOW2_HELPURL = "";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_RAINBOW3 = "Utiliser la palette arc-en-ciel 3 🌈";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_RAINBOW3_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_RAINBOW3_HELPURL = "";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_OCEAN = "Utiliser la palette océan 🌊";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_OCEAN_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_OCEAN_HELPURL = "";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_NUAGES = "Utiliser la palette nuages ⛅";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_NUAGES_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_NUAGES_HELPURL = "";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_LAVE = "Utiliser la palette lave 🔥";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_LAVE_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_LAVE_HELPURL = "";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_FORET = "Utiliser la palette forêt 🌳";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_FORET_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_FORET_HELPURL = "";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_PARTY = "Utiliser la palette fête 🎉";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_PARTY_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_SET_PALETTE_PARTY_HELPURL = "";
+
 Blockly.Msg.VIRUS_WS2812B_DEMO_MODE = "Code de démo";
 Blockly.Msg.VIRUS_WS2812B_DEMO_MODE_TOOLTIP = "";
 Blockly.Msg.VIRUS_WS2812B_DEMO_MODE_HELPURL = "";
+
+Blockly.Msg.VIRUS_WS2812B_SET_BRIGHTNESS = "Luminosité =";
+Blockly.Msg.VIRUS_WS2812B_SET_BRIGHTNESS_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_SET_BRIGHTNESS_HELPURL = "";
+
+Blockly.Msg.VIRUS_WS2812B_GET_BRIGHTNESS = "Luminosité";
+Blockly.Msg.VIRUS_WS2812B_GET_BRIGHTNESS_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_GET_BRIGHTNESS_HELPURL = "";
+
+Blockly.Msg.VIRUS_WS2812B_SET_FREQUENCE = "Fréquence (Hz) =";
+Blockly.Msg.VIRUS_WS2812B_SET_FREQUENCE_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_SET_FREQUENCE_HELPURL = "";
+
+Blockly.Msg.VIRUS_WS2812B_GET_FREQUENCE = "Fréquence (Hz)";
+Blockly.Msg.VIRUS_WS2812B_GET_FREQUENCE_TOOLTIP = "";
+Blockly.Msg.VIRUS_WS2812B_GET_FREQUENCE_HELPURL = "";
 
 Blockly.Msg.VIRUS_MATH_RANDOM_INT = "Entier aléatoire entre";
 Blockly.Msg.VIRUS_MATH_RANDOM_INT2 = "et";
 Blockly.Msg.VIRUS_MATH_RANDOM_INT_TOOLTIP = "";
 Blockly.Msg.VIRUS_MATH_RANDOM_INT_HELPURL = "";
+
+Blockly.Msg.VIRUS_IR_INIT = "📡 Initialiser la télécommande IR branchée sur";
+Blockly.Msg.VIRUS_IR_INIT_TOOLTIP = "";
+Blockly.Msg.VIRUS_IR_INIT_HELPURL = "";
+
+Blockly.Msg.VIRUS_IR_ON_BUTTON = "📡 À l'appui sur le bouton";
+Blockly.Msg.VIRUS_IR_ON_BUTTON2 = "faire";
+Blockly.Msg.VIRUS_IR_ON_BUTTON_TOOLTIP = "";
+Blockly.Msg.VIRUS_IR_ON_BUTTON_HELPURL = "";
+
+Blockly.Msg.VIRUS_CAPTEUR_SON_INIT = "🔊 Initialiser le capteur de son branché sur";
+Blockly.Msg.VIRUS_CAPTEUR_SON_INIT2 = "Nombre de coups avant déclenchement";
+Blockly.Msg.VIRUS_CAPTEUR_SON_INIT3 = "Temps min entre deux coups (ms)";
+Blockly.Msg.VIRUS_CAPTEUR_SON_INIT4 = "Temps max entre deux coups (ms)";
+Blockly.Msg.VIRUS_CAPTEUR_SON_INIT_TOOLTIP = "";
+Blockly.Msg.VIRUS_CAPTEUR_SON_INIT_HELPURL = "";
+
+Blockly.Msg.VIRUS_CAPTEUR_SON_ON_CAPTEUR = "🔊 Quand un bruit est détecté faire";
+Blockly.Msg.VIRUS_CAPTEUR_SON_ON_CAPTEUR_TOOLTIP = "";
+Blockly.Msg.VIRUS_CAPTEUR_SON_ON_CAPTEUR_HELPURL = "";
 
 //X-NUCLEO-IKS01A3 shield blocks: the X-NUCLEO-IKS01A3 is a motion MEMS and environmental sensor evaluation board system, for ST Nucleo boards.
 Blockly.Msg.X_NUCLEO_IKS01A3_Temp_Read_INPUT = "valeur de la température";

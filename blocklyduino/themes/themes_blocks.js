@@ -52,6 +52,12 @@ Blockly.Themes.Classic.blockStyles['ultrason_capteur_blocks'] = {
 Blockly.Themes.Classic.blockStyles['ws2812b_blocks'] = {
     "colourPrimary": "#FF6666"
 };
+Blockly.Themes.Classic.blockStyles['ir_blocks'] = {
+    "colourPrimary": "#009999"
+};
+Blockly.Themes.Classic.blockStyles['capteur_son_blocks'] = {
+    "colourPrimary": "#990099"
+};
 Blockly.Themes.Classic.blockStyles['seeed_blocks'] = {
     "colourPrimary": "#91C11E"
 };

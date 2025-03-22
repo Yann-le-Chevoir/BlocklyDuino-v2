@@ -43,6 +43,23 @@ Blockly.Themes.Classic.categoryStyles['ultrason_capteur_category'] = {
 Blockly.Themes.Classic.categoryStyles['ws2812b_category'] = {
     "colour": "#FF6666"
 };
+
+Blockly.Themes.Classic.categoryStyles['tedx_category'] = {
+    "colour": "#1fbd00"
+};
+
+Blockly.Themes.Classic.categoryStyles['pince_categorie'] = {
+    "colour": "#a57240"
+};
+
+Blockly.Themes.Classic.categoryStyles['bras_categorie'] = {
+    "colour": "#545454"
+};
+
+Blockly.Themes.Classic.categoryStyles['drive_categorie'] = {
+    "colour": "#ff0000"
+};
+
 Blockly.Themes.Classic.categoryStyles['ir_category'] = {
     "colour": "#009999"
 };

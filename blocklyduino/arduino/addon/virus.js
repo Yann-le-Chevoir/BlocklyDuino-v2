@@ -692,3 +692,47 @@ Blockly.Arduino['virus_capteur_son_on_capteur'] = function (block) {
     var code = '';
     return code;
 };
+
+
+Blockly.Arduino['virus_tedx_commande'] = function (block) {
+    return "emerik";
+};
+
+
+
+Blockly.Arduino['dragons_robotcontainer_on_true'] = function (block) {
+    var code = 'test();\n';
+    return code;
+};
+
+Blockly.Arduino['dragons_buttonbiding_on_true'] = function (block) {
+    var button = block.getFieldValue('BUTTONBIDING');
+    var command = Blockly.Arduino.valueToCode(this, 'COMMAND', Blockly.Arduino.ORDER_ATOMIC);
+    var code = 'JoystickButton ' + button + ' = new JoystickButton(mXboxController, Button.' + button + '.value);\n' + button + '.onTrue(' + command + ');\n';
+    return code;
+};
+
+Blockly.Arduino['Ouvre_Pince'] = function (block) {
+    var code = 'OpenPinceCommand';
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino['Ferme_Pince'] = function (block) {
+    var code = 'ClosePinceCommand';
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+
+
+
+
+/*Blockly.Arduino['virus_ws2812b_get_frequence'] = function (block) {
+    var code = 'updates_per_second';
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino['virus_ws2812b_set_frequence'] = function (block) {
+    var data = Blockly.Arduino.valueToCode(this, 'DATA', Blockly.Arduino.ORDER_ATOMIC);
+    var code = 'updates_per_second = ' + data + ';\n';
+    return code;
+};*/

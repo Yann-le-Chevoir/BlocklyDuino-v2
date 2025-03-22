@@ -827,3 +827,109 @@ Blockly.Blocks['virus_capteur_son_on_capteur'] = {
         this.setStyle('capteur_son_blocks');
     }
 };
+
+
+Blockly.Blocks['virus_tedx_commande'] = {
+    init: function() {
+      this.appendDummyInput()
+          .appendField(new Blockly.FieldTextInput("command name"), "commandName");
+      this.appendStatementInput("init")
+          .setCheck(null)
+          .appendField("init");
+      this.appendStatementInput(Blockly.Msg.VIRUS_PERIODIC)
+          .setCheck(null)
+          .appendField("periodic");
+      this.appendStatementInput("is finished")
+          .setCheck("Boolean")
+          .appendField("is finished");
+      this.appendStatementInput("end")
+          .setCheck(null)
+          .appendField("end");
+      this.setColour(315);
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['dragons_robotcontainer_on_true'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField(Blockly.Msg.VIRUS_WS2812B_ETEINDRE)
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.VIRUS_WS2812B_ETEINDRE_TOOLTIP);
+        this.setHelpUrl(Blockly.Msg.VIRUS_WS2812B_ETEINDRE_HELPURL);
+        this.setStyle('ws2812b_blocks');
+    }
+};
+
+
+
+
+Blockly.Blocks['dragons_buttonbiding_on_true'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Quand le bouton ")
+                .appendField(new Blockly.FieldDropdown([["A","kA"], ["B","kB"], ["X","kX"], ["Y","kY"]]), "BUTTONBIDING")
+                .appendField("est appuyé")
+                .appendField(", démare ");
+        this.appendValueInput("COMMAND", 'Number')
+                .setCheck(intCompatibility);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('output_blocks');
+    }
+};
+
+
+Blockly.Blocks['Ouvre_Pince'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Ouvre Pince")
+        this.setOutput(true, intCompatibility);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('input_blocks');
+    }
+};
+
+
+Blockly.Blocks['Ferme_Pince'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Ferme Pince")
+        this.setOutput(true, intCompatibility);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('input_blocks');
+    }
+};
+
+/*Blockly.Blocks['virus_ws2812b_get_frequence'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField(Blockly.Msg.VIRUS_WS2812B_GET_FREQUENCE);
+        this.setOutput(true, intCompatibility);
+        this.setTooltip(Blockly.Msg.VIRUS_WS2812B_GET_FREQUENCE_TOOLTIP);
+        this.setHelpUrl(Blockly.Msg.VIRUS_WS2812B_GET_FREQUENCE_HELPURL);
+        this.setStyle('input_blocks');
+    }
+};
+
+Blockly.Blocks['virus_ws2812b_set_frequence'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField(Blockly.Msg.VIRUS_WS2812B_SET_FREQUENCE);
+        this.appendValueInput("DATA", 'Number')
+                .setCheck(intCompatibility);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip(Blockly.Msg.VIRUS_WS2812B_SET_FREQUENCE_TOOLTIP);
+        this.setHelpUrl(Blockly.Msg.VIRUS_WS2812B_SET_FREQUENCE_HELPURL);
+        this.setStyle('output_blocks');
+    }
+};*/

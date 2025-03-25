@@ -699,9 +699,18 @@ Blockly.Arduino['virus_tedx_commande'] = function (block) {
 };
 
 
-
+/*
 Blockly.Arduino['dragons_robotcontainer_on_true'] = function (block) {
     var code = 'test();\n';
+    return code;
+};
+*/
+Blockly.Arduino['dragons_buttonbiding_fonction'] = function (block) {
+    //var fonctions = Blockly.Arduino.valueToCode(this, "Fonctions", Blockly.Arduino.ORDER_ATOMIC)
+    var fonctions = Blockly.Arduino.statementToCode(block, 'Fonctions');
+    Blockly.Arduino.definitions_["buttonbiding_fonction"] = 'private void configureButtonBindings() {\n' + fonctions + '}';
+    var code = '';
+    //var code = 'JoystickButton ' + button + ' = new JoystickButton(mXboxController, Button.' + button + '.value);\n' + button + '.onTrue(' + command + ');\n';
     return code;
 };
 
@@ -712,6 +721,14 @@ Blockly.Arduino['dragons_buttonbiding_on_true'] = function (block) {
     return code;
 };
 
+Blockly.Arduino['dragons_buttonbiding_while_true'] = function (block) {
+    var button = block.getFieldValue('BUTTONBIDING');
+    var command = Blockly.Arduino.valueToCode(this, 'COMMAND', Blockly.Arduino.ORDER_ATOMIC);
+    var code = 'JoystickButton ' + button + ' = new JoystickButton(mXboxController, Button.' + button + '.value);\n' + button + '.whileTrue(' + command + ');\n';
+    return code;
+};
+
+
 Blockly.Arduino['Ouvre_Pince'] = function (block) {
     var code = 'OpenPinceCommand';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
@@ -719,6 +736,16 @@ Blockly.Arduino['Ouvre_Pince'] = function (block) {
 
 Blockly.Arduino['Ferme_Pince'] = function (block) {
     var code = 'ClosePinceCommand';
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino['Lower_Bras_Commande'] = function (block) {
+    var code = 'LowerBrasCommand';
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+Blockly.Arduino['Lift_Bras_Command'] = function (block) {
+    var code = 'LiftBrasCommand';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 

@@ -851,6 +851,7 @@ Blockly.Blocks['virus_tedx_commande'] = {
     }
 };
 
+/*
 Blockly.Blocks['dragons_robotcontainer_on_true'] = {
     init: function () {
         this.appendDummyInput()
@@ -862,7 +863,7 @@ Blockly.Blocks['dragons_robotcontainer_on_true'] = {
         this.setStyle('ws2812b_blocks');
     }
 };
-
+*/
 
 
 
@@ -884,6 +885,37 @@ Blockly.Blocks['dragons_buttonbiding_on_true'] = {
     }
 };
 
+Blockly.Blocks['dragons_buttonbiding_fonction'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Définir les boutons de la manette")
+        this.appendStatementInput("Fonctions")
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('output_blocks');
+    }
+};
+
+Blockly.Blocks['dragons_buttonbiding_while_true'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Tant que le bouton")
+                .appendField(new Blockly.FieldDropdown([["A","kA"], ["B","kB"], ["X","kX"], ["Y","kY"]]), "BUTTONBIDING")
+                .appendField("est appuyé")
+                .appendField(", exécute ");
+        this.appendValueInput("COMMAND", 'Number')
+                .setCheck(intCompatibility);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('output_blocks');
+    }
+};
 
 Blockly.Blocks['Ouvre_Pince'] = {
     init: function () {
@@ -901,6 +933,28 @@ Blockly.Blocks['Ferme_Pince'] = {
     init: function () {
         this.appendDummyInput()
                 .appendField("Ferme Pince")
+        this.setOutput(true, intCompatibility);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('input_blocks');
+    }
+};
+
+Blockly.Blocks['Lower_Bras_Commande'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Baisser le bras")
+        this.setOutput(true, intCompatibility);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('input_blocks');
+    }
+};
+
+Blockly.Blocks['Lift_Bras_Command'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Monter le bras")
         this.setOutput(true, intCompatibility);
         this.setTooltip("");
         this.setHelpUrl("");

@@ -963,10 +963,6 @@ Blockly.Blocks['getAutonomousCommand'] = {
     }
 };
 
-var workspace = "workspace"
-var block = workspace.newBlock("getAutonomousCommand")
-block.initSvg()
-block.render()
 
 Blockly.Blocks['Ouvre_Pince'] = {
     init: function () {

@@ -48,6 +48,10 @@ Blockly.Themes.Classic.categoryStyles['tedx_category'] = {
     "colour": "#1fbd00"
 };
 
+Blockly.Themes.Classic.categoryStyles['commandes_categorie'] = {
+    "colour": "#3333ff"
+};
+
 Blockly.Themes.Classic.categoryStyles['pince_categorie'] = {
     "colour": "#a57240"
 };

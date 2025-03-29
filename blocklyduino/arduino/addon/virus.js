@@ -714,6 +714,30 @@ Blockly.Arduino['dragons_buttonbiding_fonction'] = function (block) {
     return code;
 };
 
+Blockly.Arduino['configureDefaultCommand'] = function (block) {
+    //var fonctions = Blockly.Arduino.valueToCode(this, "Fonctions", Blockly.Arduino.ORDER_ATOMIC)
+    var commandes = Blockly.Arduino.statementToCode(block, 'Commandes');
+    Blockly.Arduino.definitions_["defaultCommand"] = 'private void configureDefaultCommand() {\n' + commandes + '}';
+    var code = '';
+    //var code = 'JoystickButton ' + button + ' = new JoystickButton(mXboxController, Button.' + button + '.value);\n' + button + '.onTrue(' + command + ');\n';
+    return code;
+};
+
+Blockly.Arduino['defaultCommand'] = function (block) {
+    var subsystem = Blockly.Arduino.valueToCode(this, 'SUBSYSTEM', Blockly.Arduino.ORDER_ATOMIC);
+    var command = Blockly.Arduino.valueToCode(this, 'COMMAND', Blockly.Arduino.ORDER_ATOMIC);
+    var code = 'm' + subsystem + '.setDefaultCommand(m' + command + ');\n'
+    return code;
+};
+
+Blockly.Arduino['getAutonomousCommand'] = function (block) {
+    var command = Blockly.Arduino.valueToCode(this, 'AUTONOMOUSCOMMAND', Blockly.Arduino.ORDER_ATOMIC);
+    Blockly.Arduino.definitions_["autonomous command"] = 'public Command getAutonomousCommand() {\nreturn m' + command + ';\n}';
+    var code = '';
+    return code;
+};
+
+
 Blockly.Arduino['dragons_buttonbiding_on_true'] = function (block) {
     var button = block.getFieldValue('BUTTONBIDING');
     var command = Blockly.Arduino.valueToCode(this, 'COMMAND', Blockly.Arduino.ORDER_ATOMIC);

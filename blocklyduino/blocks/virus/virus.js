@@ -881,21 +881,7 @@ Blockly.Blocks['dragons_buttonbiding_on_true'] = {
         this.setNextStatement(true, null);
         this.setTooltip("");
         this.setHelpUrl("");
-        this.setStyle('output_blocks');
-    }
-};
-
-Blockly.Blocks['dragons_buttonbiding_fonction'] = {
-    init: function () {
-        this.appendDummyInput()
-                .appendField("Définir les boutons de la manette")
-        this.appendStatementInput("Fonctions")
-        this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setTooltip("");
-        this.setHelpUrl("");
-        this.setStyle('output_blocks');
+        this.setStyle('buttons');
     }
 };
 
@@ -913,9 +899,74 @@ Blockly.Blocks['dragons_buttonbiding_while_true'] = {
         this.setNextStatement(true, null);
         this.setTooltip("");
         this.setHelpUrl("");
+        this.setStyle('buttons');
+    }
+};
+
+Blockly.Blocks['dragons_buttonbiding_fonction'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Définir les boutons de la manette")
+        this.appendStatementInput("Fonctions")
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('buttons');
+    }
+};
+
+Blockly.Blocks['configureDefaultCommand'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Configurer les commandes par défaut")
+        this.appendStatementInput("Commandes")
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('output_blocks');
+        
+    }
+};
+
+Blockly.Blocks['defaultCommand'] = {
+    init: function () {
+        this.appendValueInput("SUBSYSTEM", 'Number')
+                .appendField("Configurer le subsystem")
+                .setCheck(intCompatibility);
+        this.appendValueInput("COMMAND", 'Number')
+                .appendField("automatiquement à cette commande")
+                .setCheck(intCompatibility);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
         this.setStyle('output_blocks');
     }
 };
+
+Blockly.Blocks['getAutonomousCommand'] = {
+    init: function () {
+        this.appendValueInput("AUTONOMOUSCOMMAND", 'Number')
+                .appendField("Définir la commande autonome par défaut")
+                .setCheck(intCompatibility);
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('output_blocks');
+    }
+};
+
+var workspace = "workspace"
+var block = workspace.newBlock("getAutonomousCommand")
+block.initSvg()
+block.render()
 
 Blockly.Blocks['Ouvre_Pince'] = {
     init: function () {

@@ -19,6 +19,9 @@ Blockly.Themes.Classic.blockStyles['input_blocks'] = {
 Blockly.Themes.Classic.blockStyles['output_blocks'] = {
     "colourPrimary": "#3333FF"
 };
+Blockly.Themes.Classic.blockStyles['buttons'] = {
+    "colourPrimary": "#1fbd00"
+};
 Blockly.Themes.Classic.blockStyles['time_blocks'] = {
     "colourPrimary": "#009900"
 };

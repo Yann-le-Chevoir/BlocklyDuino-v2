@@ -694,8 +694,11 @@ Blockly.Arduino['virus_capteur_son_on_capteur'] = function (block) {
 };
 
 
-Blockly.Arduino['virus_tedx_commande'] = function (block) {
-    return "emerik";
+Blockly.Arduino['ouvre_pince_command'] = function (block) {
+    Blockly.Arduino.definitions_["ouvre_pince_command"] = 'public class OpenPinceCommand() extends Command {\nprivate final PinceSubsystem mPinceSubsystem;\npublic ClosePinceCommand(PinceSubsystem pinceSubsystem) {\nmPinceSubsystem = pinceSubsystem;\naddRequirements(pinceSubsystem);\n}';
+    var code = '';
+    //var code = 'JoystickButton ' + button + ' = new JoystickButton(mXboxController, Button.' + button + '.value);\n' + button + '.onTrue(' + command + ');\n';
+    return code;
 };
 
 

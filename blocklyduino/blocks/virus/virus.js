@@ -829,10 +829,10 @@ Blockly.Blocks['virus_capteur_son_on_capteur'] = {
 };
 
 
-Blockly.Blocks['virus_tedx_commande'] = {
+Blockly.Blocks['ouvre_pince_command'] = {
     init: function() {
-      this.appendDummyInput()
-          .appendField(new Blockly.FieldTextInput("command name"), "commandName");
+        this.appendDummyInput()
+        .appendField("commande Ouvre Pince")
       this.appendStatementInput("init")
           .setCheck(null)
           .appendField("init");
@@ -845,7 +845,7 @@ Blockly.Blocks['virus_tedx_commande'] = {
       this.appendStatementInput("end")
           .setCheck(null)
           .appendField("end");
-      this.setColour(315);
+          this.setStyle("input_blocks")
    this.setTooltip("");
    this.setHelpUrl("");
     }

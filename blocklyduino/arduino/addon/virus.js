@@ -695,7 +695,44 @@ Blockly.Arduino['virus_capteur_son_on_capteur'] = function (block) {
 
 
 Blockly.Arduino['ouvre_pince_command'] = function (block) {
-    Blockly.Arduino.definitions_["ouvre_pince_command"] = 'public class OpenPinceCommand() extends Command {\nprivate final PinceSubsystem mPinceSubsystem;\npublic ClosePinceCommand(PinceSubsystem pinceSubsystem) {\nmPinceSubsystem = pinceSubsystem;\naddRequirements(pinceSubsystem);\n}';
+    var init = Blockly.Arduino.statementToCode(block, 'init')
+    var execute = Blockly.Arduino.statementToCode(block, 'periodic')
+    var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')
+    var end = Blockly.Arduino.statementToCode(block, 'end')
+    Blockly.Arduino.definitions_["ouvre_pince_command"] = 'package ev3.robot.commands;import edu.wpi.first.wpilibj2.command.Command;import ev3.robot.subsystems.PinceSubsystem;\npublic class OpenPinceCommand() extends Command {\nprivate final PinceSubsystem mPinceSubsystem;\npublic OpenPinceCommand(PinceSubsystem pinceSubsystem) {\nmPinceSubsystem = pinceSubsystem;\naddRequirements(pinceSubsystem);\n}\n@Override\npublic void initialize() {\n' + init + '\n}\n@Override\npublic void execute() {\n' + execute + '}\n@Override\npublic void end(boolean interrupted) {\n' + is_finished + '\n}\n@Override\npublic boolean isFinished() {\n' + end +'\n}\n}\n';
+    var code = '';
+    //var code = 'JoystickButton ' + button + ' = new JoystickButton(mXboxController, Button.' + button + '.value);\n' + button + '.onTrue(' + command + ');\n';
+    return code;
+};
+
+Blockly.Arduino['ferme_pince_command'] = function (block) {
+    var init = Blockly.Arduino.statementToCode(block, 'init')
+    var execute = Blockly.Arduino.statementToCode(block, 'periodic')
+    var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')
+    var end = Blockly.Arduino.statementToCode(block, 'end')
+    Blockly.Arduino.definitions_["ferme_pince_command"] = 'package ev3.robot.commands;import edu.wpi.first.wpilibj2.command.Command;import ev3.robot.subsystems.PinceSubsystem;\npublic class ClosePinceCommand() extends Command {\nprivate final PinceSubsystem mPinceSubsystem;\npublic ClosePinceCommand(PinceSubsystem pinceSubsystem) {\nmPinceSubsystem = pinceSubsystem;\naddRequirements(pinceSubsystem);\n}\n@Override\npublic void initialize() {\n' + init + '\n}\n@Override\npublic void execute() {\n' + execute + '}\n@Override\npublic void end(boolean interrupted) {\n' + is_finished + '\n}\n@Override\npublic boolean isFinished() {\n' + end +'\n}\n}\n';
+    var code = '';
+    //var code = 'JoystickButton ' + button + ' = new JoystickButton(mXboxController, Button.' + button + '.value);\n' + button + '.onTrue(' + command + ');\n';
+    return code;
+};
+
+Blockly.Arduino['LowerBrasCommand'] = function (block) {
+    var init = Blockly.Arduino.statementToCode(block, 'init')
+    var execute = Blockly.Arduino.statementToCode(block, 'periodic')
+    var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')
+    var end = Blockly.Arduino.statementToCode(block, 'end')
+    Blockly.Arduino.definitions_["LowerBrasCommand"] = 'package ev3.robot.commands;import edu.wpi.first.wpilibj2.command.Command;import ev3.robot.subsystems.BrasSubsystem;\npublic class LowerBrasCommand() extends Command {\nprivate final BrasSubsystem mBrasSubsystem;\npublic ClosePinceCommand(BrasSubsystem mBrasSubsystem) {\nmBrasSubsystem = brasSubsystem;\naddRequirements(brasSubsystem);\n}\n@Override\npublic void initialize() {\n' + init + '\n}\n@Override\npublic void execute() {\n' + execute + '}\n@Override\npublic void end(boolean interrupted) {\n' + is_finished + '\n}\n@Override\npublic boolean isFinished() {\n' + end +'\n}\n}\n';
+    var code = '';
+    //var code = 'JoystickButton ' + button + ' = new JoystickButton(mXboxController, Button.' + button + '.value);\n' + button + '.onTrue(' + command + ');\n';
+    return code;
+};
+
+Blockly.Arduino['LiftBrasCommand'] = function (block) {
+    var init = Blockly.Arduino.statementToCode(block, 'init')
+    var execute = Blockly.Arduino.statementToCode(block, 'periodic')
+    var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')
+    var end = Blockly.Arduino.statementToCode(block, 'end')
+    Blockly.Arduino.definitions_["LiftBrasCommand"] = 'package ev3.robot.commands;import edu.wpi.first.wpilibj2.command.Command;import ev3.robot.subsystems.BrasSubsystem;\npublic class LiftBrasCommand() extends Command {\nprivate final BrasSubsystem mBrasSubsystem;\npublic ClosePinceCommand(BrasSubsystem mBrasSubsystem) {\nmBrasSubsystem = brasSubsystem;\naddRequirements(brasSubsystem);\n}\n@Override\npublic void initialize() {\n' + init + '\n}\n@Override\npublic void execute() {\n' + execute + '}\n@Override\npublic void end(boolean interrupted) {\n' + is_finished + '\n}\n@Override\npublic boolean isFinished() {\n' + end +'\n}\n}\n';
     var code = '';
     //var code = 'JoystickButton ' + button + ' = new JoystickButton(mXboxController, Button.' + button + '.value);\n' + button + '.onTrue(' + command + ');\n';
     return code;
@@ -766,12 +803,12 @@ Blockly.Arduino['Ferme_Pince'] = function (block) {
     return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
-Blockly.Arduino['Lower_Bras_Commande'] = function (block) {
+Blockly.Arduino['Lower_Bras'] = function (block) {
     var code = 'LowerBrasCommand';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
-Blockly.Arduino['Lift_Bras_Command'] = function (block) {
+Blockly.Arduino['Lift_Bras'] = function (block) {
     var code = 'LiftBrasCommand';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
 };

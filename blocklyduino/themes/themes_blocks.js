@@ -13,6 +13,12 @@
 Blockly.Themes.Classic.blockStyles['arduino_blocks'] = {
     "colourPrimary": "#007481"
 };
+Blockly.Themes.Classic.blockStyles['commandes_pince'] = {
+    "colourPrimary": "#a57240"
+};
+Blockly.Themes.Classic.blockStyles['commandes_bras'] = {
+    "colourPrimary": "#545454"
+};
 Blockly.Themes.Classic.blockStyles['input_blocks'] = {
     "colourPrimary": "#B266FF"
 };

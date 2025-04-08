@@ -836,7 +836,7 @@ Blockly.Blocks['ouvre_pince_command'] = {
       this.appendStatementInput("init")
           .setCheck(null)
           .appendField("init");
-      this.appendStatementInput(Blockly.Msg.VIRUS_PERIODIC)
+      this.appendStatementInput("periodic")
           .setCheck(null)
           .appendField("periodic");
       this.appendStatementInput("is finished")
@@ -845,11 +845,78 @@ Blockly.Blocks['ouvre_pince_command'] = {
       this.appendStatementInput("end")
           .setCheck(null)
           .appendField("end");
-          this.setStyle("input_blocks")
+          this.setStyle("commandes_pince")
    this.setTooltip("");
    this.setHelpUrl("");
     }
 };
+
+Blockly.Blocks['ferme_pince_command'] = {
+    init: function() {
+        this.appendDummyInput()
+        .appendField("commande Ferme Pince")
+      this.appendStatementInput("init")
+          .setCheck(null)
+          .appendField("init");
+      this.appendStatementInput("periodic")
+          .setCheck(null)
+          .appendField("periodic");
+      this.appendStatementInput("is finished")
+          .setCheck("Boolean")
+          .appendField("is finished");
+      this.appendStatementInput("end")
+          .setCheck(null)
+          .appendField("end");
+          this.setStyle("commandes_pince")
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['LowerBrasCommand'] = {
+    init: function() {
+        this.appendDummyInput()
+        .appendField("commande Lower Bras")
+      this.appendStatementInput("init")
+          .setCheck(null)
+          .appendField("init");
+      this.appendStatementInput("periodic")
+          .setCheck(null)
+          .appendField("periodic");
+      this.appendStatementInput("is finished")
+          .setCheck("Boolean")
+          .appendField("is finished");
+      this.appendStatementInput("end")
+          .setCheck(null)
+          .appendField("end");
+          this.setStyle("commandes_bras")
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['LiftBrasCommand'] = {
+    init: function() {
+        this.appendDummyInput()
+        .appendField("commande Lift Bras")
+      this.appendStatementInput("init")
+          .setCheck(null)
+          .appendField("init");
+      this.appendStatementInput("periodic")
+          .setCheck(null)
+          .appendField("periodic");
+      this.appendStatementInput("is finished")
+          .setCheck("Boolean")
+          .appendField("is finished");
+      this.appendStatementInput("end")
+          .setCheck(null)
+          .appendField("end");
+          this.setStyle("commandes_bras")
+   this.setTooltip("");
+   this.setHelpUrl("");
+    }
+};
+
 
 /*
 Blockly.Blocks['dragons_robotcontainer_on_true'] = {
@@ -971,7 +1038,7 @@ Blockly.Blocks['Ouvre_Pince'] = {
         this.setOutput(true, intCompatibility);
         this.setTooltip("");
         this.setHelpUrl("");
-        this.setStyle('input_blocks');
+        this.setStyle('commandes_pince');
     }
 };
 
@@ -983,29 +1050,29 @@ Blockly.Blocks['Ferme_Pince'] = {
         this.setOutput(true, intCompatibility);
         this.setTooltip("");
         this.setHelpUrl("");
-        this.setStyle('input_blocks');
+        this.setStyle('commandes_pince');
     }
 };
 
-Blockly.Blocks['Lower_Bras_Commande'] = {
+Blockly.Blocks['Lower_Bras'] = {
     init: function () {
         this.appendDummyInput()
                 .appendField("Baisser le bras")
         this.setOutput(true, intCompatibility);
         this.setTooltip("");
         this.setHelpUrl("");
-        this.setStyle('input_blocks');
+        this.setStyle('commandes_bras');
     }
 };
 
-Blockly.Blocks['Lift_Bras_Command'] = {
+Blockly.Blocks['Lift_Bras'] = {
     init: function () {
         this.appendDummyInput()
                 .appendField("Monter le bras")
         this.setOutput(true, intCompatibility);
         this.setTooltip("");
         this.setHelpUrl("");
-        this.setStyle('input_blocks');
+        this.setStyle('commandes_bras');
     }
 };
 

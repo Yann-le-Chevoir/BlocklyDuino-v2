@@ -13,6 +13,9 @@
 Blockly.Themes.Classic.blockStyles['arduino_blocks'] = {
     "colourPrimary": "#007481"
 };
+Blockly.Themes.Classic.blockStyles['robotContainer'] = {
+    "colourPrimary": "#B8860B"
+};
 Blockly.Themes.Classic.blockStyles['commandes_pince'] = {
     "colourPrimary": "#a57240"
 };

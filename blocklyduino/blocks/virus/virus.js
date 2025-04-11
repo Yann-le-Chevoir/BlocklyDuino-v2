@@ -917,6 +917,22 @@ Blockly.Blocks['LiftBrasCommand'] = {
     }
 };
 
+Blockly.Blocks['RobotContainer'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("Bloc de départ")
+      this.appendStatementInput("buttonBiding")
+            .setCheck(null)
+            .appendField("Définir les boutons de la manette");
+      this.appendStatementInput("defaultCommand")
+            .setCheck(null)
+            .appendField("Définir les commandes par défaut");
+    this.setStyle("robotContainer")
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
 
 /*
 Blockly.Blocks['dragons_robotcontainer_on_true'] = {
@@ -976,8 +992,8 @@ Blockly.Blocks['dragons_buttonbiding_fonction'] = {
                 .appendField("Définir les boutons de la manette")
         this.appendStatementInput("Fonctions")
         this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
+        this.setPreviousStatement(false, null);
+        this.setNextStatement(false, null);
         this.setTooltip("");
         this.setHelpUrl("");
         this.setStyle('buttons');
@@ -990,8 +1006,8 @@ Blockly.Blocks['configureDefaultCommand'] = {
                 .appendField("Configurer les commandes par défaut")
         this.appendStatementInput("Commandes")
         this.setInputsInline(true);
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
+        this.setPreviousStatement(false, null);
+        this.setNextStatement(false, null);
         this.setTooltip("");
         this.setHelpUrl("");
         this.setStyle('output_blocks');
@@ -1020,10 +1036,10 @@ Blockly.Blocks['getAutonomousCommand'] = {
     init: function () {
         this.appendValueInput("AUTONOMOUSCOMMAND", 'Number')
                 .appendField("Définir la commande autonome par défaut")
-                .setCheck(intCompatibility);
+                .setCheck(null);
         this.setInputsInline(true);
         this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
+        this.setNextStatement(false, null);
         this.setTooltip("");
         this.setHelpUrl("");
         this.setStyle('output_blocks');

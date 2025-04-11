@@ -699,7 +699,7 @@ Blockly.Arduino['ouvre_pince_command'] = function (block) {
     var execute = Blockly.Arduino.statementToCode(block, 'periodic')
     var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')
     var end = Blockly.Arduino.statementToCode(block, 'end')
-    Blockly.Arduino.definitions_["ouvre_pince_command"] = 'package ev3.robot.commands;import edu.wpi.first.wpilibj2.command.Command;import ev3.robot.subsystems.PinceSubsystem;\npublic class OpenPinceCommand() extends Command {\nprivate final PinceSubsystem mPinceSubsystem;\npublic OpenPinceCommand(PinceSubsystem pinceSubsystem) {\nmPinceSubsystem = pinceSubsystem;\naddRequirements(pinceSubsystem);\n}\n@Override\npublic void initialize() {\n' + init + '\n}\n@Override\npublic void execute() {\n' + execute + '}\n@Override\npublic void end(boolean interrupted) {\n' + is_finished + '\n}\n@Override\npublic boolean isFinished() {\n' + end +'\n}\n}\n';
+    Blockly.Arduino.definitions_["ouvre_pince_command"] = '###ouvre_pince_command.java###DEBUT###\npackage ev3.robot.commands;import edu.wpi.first.wpilibj2.command.Command;import ev3.robot.subsystems.PinceSubsystem;\npublic class OpenPinceCommand() extends Command {\nprivate final PinceSubsystem mPinceSubsystem;\npublic OpenPinceCommand(PinceSubsystem pinceSubsystem) {\nmPinceSubsystem = pinceSubsystem;\naddRequirements(pinceSubsystem);\n}\n@Override\npublic void initialize() {\n' + init + '\n}\n@Override\npublic void execute() {\n' + execute + '}\n@Override\npublic void end(boolean interrupted) {\n' + is_finished + '\n}\n@Override\npublic boolean isFinished() {\n' + end +'\n}\n}\n###ouvre_pince_command.java###FIN###\n';
     var code = '';
     //var code = 'JoystickButton ' + button + ' = new JoystickButton(mXboxController, Button.' + button + '.value);\n' + button + '.onTrue(' + command + ');\n';
     return code;
@@ -710,7 +710,7 @@ Blockly.Arduino['ferme_pince_command'] = function (block) {
     var execute = Blockly.Arduino.statementToCode(block, 'periodic')
     var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')
     var end = Blockly.Arduino.statementToCode(block, 'end')
-    Blockly.Arduino.definitions_["ferme_pince_command"] = 'package ev3.robot.commands;import edu.wpi.first.wpilibj2.command.Command;import ev3.robot.subsystems.PinceSubsystem;\npublic class ClosePinceCommand() extends Command {\nprivate final PinceSubsystem mPinceSubsystem;\npublic ClosePinceCommand(PinceSubsystem pinceSubsystem) {\nmPinceSubsystem = pinceSubsystem;\naddRequirements(pinceSubsystem);\n}\n@Override\npublic void initialize() {\n' + init + '\n}\n@Override\npublic void execute() {\n' + execute + '}\n@Override\npublic void end(boolean interrupted) {\n' + is_finished + '\n}\n@Override\npublic boolean isFinished() {\n' + end +'\n}\n}\n';
+    Blockly.Arduino.definitions_["ferme_pince_command"] = '###ferme_pince_command.java###DEBUT###\npackage ev3.robot.commands;import edu.wpi.first.wpilibj2.command.Command;import ev3.robot.subsystems.PinceSubsystem;\npublic class ClosePinceCommand() extends Command {\nprivate final PinceSubsystem mPinceSubsystem;\npublic ClosePinceCommand(PinceSubsystem pinceSubsystem) {\nmPinceSubsystem = pinceSubsystem;\naddRequirements(pinceSubsystem);\n}\n@Override\npublic void initialize() {\n' + init + '\n}\n@Override\npublic void execute() {\n' + execute + '}\n@Override\npublic void end(boolean interrupted) {\n' + is_finished + '\n}\n@Override\npublic boolean isFinished() {\n' + end +'\n}\n}\n###ferme_pince_command.java###FIN###';
     var code = '';
     //var code = 'JoystickButton ' + button + ' = new JoystickButton(mXboxController, Button.' + button + '.value);\n' + button + '.onTrue(' + command + ');\n';
     return code;
@@ -721,7 +721,8 @@ Blockly.Arduino['LowerBrasCommand'] = function (block) {
     var execute = Blockly.Arduino.statementToCode(block, 'periodic')
     var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')
     var end = Blockly.Arduino.statementToCode(block, 'end')
-    Blockly.Arduino.definitions_["LowerBrasCommand"] = 'package ev3.robot.commands;import edu.wpi.first.wpilibj2.command.Command;import ev3.robot.subsystems.BrasSubsystem;\npublic class LowerBrasCommand() extends Command {\nprivate final BrasSubsystem mBrasSubsystem;\npublic ClosePinceCommand(BrasSubsystem mBrasSubsystem) {\nmBrasSubsystem = brasSubsystem;\naddRequirements(brasSubsystem);\n}\n@Override\npublic void initialize() {\n' + init + '\n}\n@Override\npublic void execute() {\n' + execute + '}\n@Override\npublic void end(boolean interrupted) {\n' + is_finished + '\n}\n@Override\npublic boolean isFinished() {\n' + end +'\n}\n}\n';
+    Blockly.Arduino.definitions_["LowerBrasCommand"] = '###LowerBrasCommand.java###DEBUT###\npackage \
+                                                        ev3.robot.commands;import edu.wpi.first.wpilibj2.command.Command;import ev3.robot.subsystems.BrasSubsystem;\npublic class LowerBrasCommand() extends Command {\nprivate final BrasSubsystem mBrasSubsystem;\npublic ClosePinceCommand(BrasSubsystem mBrasSubsystem) {\nmBrasSubsystem = brasSubsystem;\naddRequirements(brasSubsystem);\n}\n@Override\npublic void initialize() {\n' + init + '\n}\n@Override\npublic void execute() {\n' + execute + '}\n@Override\npublic void end(boolean interrupted) {\n' + is_finished + '\n}\n@Override\npublic boolean isFinished() {\n' + end +'\n}\n}\n###LowerBrasCommand.java###FIN###';
     var code = '';
     //var code = 'JoystickButton ' + button + ' = new JoystickButton(mXboxController, Button.' + button + '.value);\n' + button + '.onTrue(' + command + ');\n';
     return code;
@@ -732,7 +733,18 @@ Blockly.Arduino['LiftBrasCommand'] = function (block) {
     var execute = Blockly.Arduino.statementToCode(block, 'periodic')
     var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')
     var end = Blockly.Arduino.statementToCode(block, 'end')
-    Blockly.Arduino.definitions_["LiftBrasCommand"] = 'package ev3.robot.commands;import edu.wpi.first.wpilibj2.command.Command;import ev3.robot.subsystems.BrasSubsystem;\npublic class LiftBrasCommand() extends Command {\nprivate final BrasSubsystem mBrasSubsystem;\npublic ClosePinceCommand(BrasSubsystem mBrasSubsystem) {\nmBrasSubsystem = brasSubsystem;\naddRequirements(brasSubsystem);\n}\n@Override\npublic void initialize() {\n' + init + '\n}\n@Override\npublic void execute() {\n' + execute + '}\n@Override\npublic void end(boolean interrupted) {\n' + is_finished + '\n}\n@Override\npublic boolean isFinished() {\n' + end +'\n}\n}\n';
+    Blockly.Arduino.definitions_["LiftBrasCommand"] = '###LiftBrasCommand.java###DEBUT###\npackage ev3.robot.commands;import edu.wpi.first.wpilibj2.command.Command;import ev3.robot.subsystems.BrasSubsystem;\npublic class LiftBrasCommand() extends Command {\nprivate final BrasSubsystem mBrasSubsystem;\npublic ClosePinceCommand(BrasSubsystem mBrasSubsystem) {\nmBrasSubsystem = brasSubsystem;\naddRequirements(brasSubsystem);\n}\n@Override\npublic void initialize() {\n' + init + '\n}\n@Override\npublic void execute() {\n' + execute + '}\n@Override\npublic void end(boolean interrupted) {\n' + is_finished + '\n}\n@Override\npublic boolean isFinished() {\n' + end +'\n}\n}\n###LiftBrasCommand.java###FIN###';
+    var code = '';
+    //var code = 'JoystickButton ' + button + ' = new JoystickButton(mXboxController, Button.' + button + '.value);\n' + button + '.onTrue(' + command + ');\n';
+    return code;
+};
+
+Blockly.Arduino['RobotContainer'] = function (block) {
+    var buttonBiding = Blockly.Arduino.statementToCode(block, 'buttonBiding')
+    var defaultCommand = Blockly.Arduino.statementToCode(block, 'defaultCommand')
+    var autonomousCommand = Blockly.Arduino.statementToCode(block, 'autonomousCommand')
+    Blockly.Arduino.definitions_["RobotContainer"] = 'package ev3.robot.subsystems;import dragons.ev3.ArduinoCRServo;import'
+                    + 'dragons.ev3.ArduinoMotor;import edu.wpi.first.hal.DriverStationJNI;import edu.wpi.first.wpilibj2.command.Subsystem;public class BrasSubsystem extends Subsystem {private final ArduinoMotor m_motorBras1 = new ArduinoMotor(0);double mSpeed = 0;public BrasSubsystem() {}@Overridepublic void periodic() {m_motorBras1.set(mSpeed);DriverStationJNI.Telemetry.putNumber("Moteur1", m_motorBras1.getTachoCount());}public void moveBras(double speed) {mSpeed = speed;}public void stop(){mSpeed = 0;}}###BrasSubsystem.java###FIN###\n###RobotContainer.java###DEBUT###\npackage ev3.robot;\nimport edu.wpi.first.wpilibj.XboxController;import edu.wpi.first.wpilibj.XboxController.Button;import edu.wpi.first.wpilibj2.command.Command;import edu.wpi.first.wpilibj2.command.button.JoystickButton;import ev3.robot.Constants.OIConstants;import ev3.robot.commandGroups.AutonomousCommandGroup;import ev3.robot.commands.DriveCommand;import ev3.robot.commands.OpenPinceCommand;import ev3.robot.commands.ClosePinceCommand;import ev3.robot.commands.LiftBrasCommand;import ev3.robot.commands.LowerBrasCommand;import ev3.robot.subsystems.BrasSubsystem;import ev3.robot.subsystems.PinceSubsystem;import ev3.robot.subsystems.DriveSubsystem;\npublic class RobotContainer {\nprivate final XboxController mXboxController = new XboxController(OIConstants.kDriverControllerPort);\nprivate final PinceSubsystem mPinceSubsystem = new PinceSubsystem();\nprivate final DriveSubsystem mDriveSubsystem = new DriveSubsystem();\nprivate final BrasSubsystem mBrasSubsystem = new BrasSubsystem();\nprivate final DriveCommand mDriveCommand = new DriveCommand(mDriveSubsystem, mXboxController);\nprivate final OpenPinceCommand mOpenPinceCommand = new OpenPinceCommand(mPinceSubsystem);\nprivate final ClosePinceCommand mClosePinceCommand = new ClosePinceCommand(mPinceSubsystem);\nprivate final LiftBrasCommand mLiftBrasCommand = new LiftBrasCommand(mBrasSubsystem);\nprivate final LowerBrasCommand mLowerBrasCommand = new LowerBrasCommand(mBrasSubsystem);\nprivate final AutonomousCommandGroup mAutonomousCommandGroup;\npublic RobotContainer() {\nmAutonomousCommandGroup = new AutonomousCommandGroup(mDriveSubsystem);\nconfigureButtonBindings();\nconfigureDefaultCommands();\n}\nprivate void configureButtonBindings() {\n'+buttonBiding+'\n}\nprivate void configureDefaultCommands() {\n'+defaultCommand+'\n}\npublic Command getAutonomousCommand() {\nreturn mAutonomousCommandGroup\n}\n}\n###RobotContainer.java###FIN###';
     var code = '';
     //var code = 'JoystickButton ' + button + ' = new JoystickButton(mXboxController, Button.' + button + '.value);\n' + button + '.onTrue(' + command + ');\n';
     return code;
@@ -766,14 +778,13 @@ Blockly.Arduino['configureDefaultCommand'] = function (block) {
 Blockly.Arduino['defaultCommand'] = function (block) {
     var subsystem = Blockly.Arduino.valueToCode(this, 'SUBSYSTEM', Blockly.Arduino.ORDER_ATOMIC);
     var command = Blockly.Arduino.valueToCode(this, 'COMMAND', Blockly.Arduino.ORDER_ATOMIC);
-    var code = 'm' + subsystem + '.setDefaultCommand(m' + command + ');\n'
+    var code = subsystem + '.setDefaultCommand(' + command + ');\n'
     return code;
 };
 
 Blockly.Arduino['getAutonomousCommand'] = function (block) {
     var command = Blockly.Arduino.valueToCode(this, 'AUTONOMOUSCOMMAND', Blockly.Arduino.ORDER_ATOMIC);
-    Blockly.Arduino.definitions_["autonomous command"] = 'public Command getAutonomousCommand() {\nreturn m' + command + ';\n}';
-    var code = '';
+    var code = command;
     return code;
 };
 
@@ -794,22 +805,22 @@ Blockly.Arduino['dragons_buttonbiding_while_true'] = function (block) {
 
 
 Blockly.Arduino['Ouvre_Pince'] = function (block) {
-    var code = 'OpenPinceCommand';
+    var code = 'mOpenPinceCommand';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['Ferme_Pince'] = function (block) {
-    var code = 'ClosePinceCommand';
+    var code = 'mClosePinceCommand';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['Lower_Bras'] = function (block) {
-    var code = 'LowerBrasCommand';
+    var code = 'mLowerBrasCommand';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
 Blockly.Arduino['Lift_Bras'] = function (block) {
-    var code = 'LiftBrasCommand';
+    var code = 'mLiftBrasCommand';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 

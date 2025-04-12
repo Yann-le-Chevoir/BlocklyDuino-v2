@@ -829,7 +829,7 @@ Blockly.Blocks['virus_capteur_son_on_capteur'] = {
 };
 
 
-Blockly.Blocks['ouvre_pince_command'] = {
+Blockly.Blocks['OpenPinceCommand'] = {
     init: function() {
         this.appendDummyInput()
         .appendField("commande Ouvre Pince")
@@ -851,7 +851,7 @@ Blockly.Blocks['ouvre_pince_command'] = {
     }
 };
 
-Blockly.Blocks['ferme_pince_command'] = {
+Blockly.Blocks['ClosePinceCommand'] = {
     init: function() {
         this.appendDummyInput()
         .appendField("commande Ferme Pince")
@@ -921,7 +921,7 @@ Blockly.Blocks['RobotContainer'] = {
     init: function() {
         this.appendDummyInput()
             .appendField("Bloc de départ")
-      this.appendStatementInput("buttonBiding")
+      this.appendStatementInput("buttonBindings")
             .setCheck(null)
             .appendField("Définir les boutons de la manette");
       this.appendStatementInput("defaultCommand")
@@ -933,28 +933,11 @@ Blockly.Blocks['RobotContainer'] = {
     }
 };
 
-
-/*
-Blockly.Blocks['dragons_robotcontainer_on_true'] = {
-    init: function () {
-        this.appendDummyInput()
-                .appendField(Blockly.Msg.VIRUS_WS2812B_ETEINDRE)
-        this.setPreviousStatement(true, null);
-        this.setNextStatement(true, null);
-        this.setTooltip(Blockly.Msg.VIRUS_WS2812B_ETEINDRE_TOOLTIP);
-        this.setHelpUrl(Blockly.Msg.VIRUS_WS2812B_ETEINDRE_HELPURL);
-        this.setStyle('ws2812b_blocks');
-    }
-};
-*/
-
-
-
-Blockly.Blocks['dragons_buttonbiding_on_true'] = {
+Blockly.Blocks['dragons_buttonbindings_on_true'] = {
     init: function () {
         this.appendDummyInput()
                 .appendField("Quand le bouton ")
-                .appendField(new Blockly.FieldDropdown([["A","kA"], ["B","kB"], ["X","kX"], ["Y","kY"]]), "BUTTONBIDING")
+                .appendField(new Blockly.FieldDropdown([["A","kA"], ["B","kB"], ["X","kX"], ["Y","kY"]]), "BUTTONBINDINGS")
                 .appendField("est appuyé")
                 .appendField(", démare ");
         this.appendValueInput("COMMAND", 'Number')
@@ -968,11 +951,11 @@ Blockly.Blocks['dragons_buttonbiding_on_true'] = {
     }
 };
 
-Blockly.Blocks['dragons_buttonbiding_while_true'] = {
+Blockly.Blocks['dragons_buttonbindings_while_true'] = {
     init: function () {
         this.appendDummyInput()
                 .appendField("Tant que le bouton")
-                .appendField(new Blockly.FieldDropdown([["A","kA"], ["B","kB"], ["X","kX"], ["Y","kY"]]), "BUTTONBIDING")
+                .appendField(new Blockly.FieldDropdown([["A","kA"], ["B","kB"], ["X","kX"], ["Y","kY"]]), "BUTTONBINDINGS")
                 .appendField("est appuyé")
                 .appendField(", exécute ");
         this.appendValueInput("COMMAND", 'Number')
@@ -986,7 +969,7 @@ Blockly.Blocks['dragons_buttonbiding_while_true'] = {
     }
 };
 
-Blockly.Blocks['dragons_buttonbiding_fonction'] = {
+Blockly.Blocks['dragons_buttonbindings_fonction'] = {
     init: function () {
         this.appendDummyInput()
                 .appendField("Définir les boutons de la manette")

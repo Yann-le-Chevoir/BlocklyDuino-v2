@@ -327,7 +327,7 @@ Blockly.Msg.VIRUS_CAPTEUR_SON_ON_CAPTEUR_TOOLTIP = "";
 Blockly.Msg.VIRUS_CAPTEUR_SON_ON_CAPTEUR_HELPURL = "";
 
 Blockly.Msg.VIRUS_PERIODIC = "periodic"
-Blockly.Msg.DRAGONS_BUTTONBIDING_QUAND = "quand le bouton "
+Blockly.Msg.DRAGONS_BUTTONBINDINGS_QUAND = "quand le bouton "
 
 //X-NUCLEO-IKS01A3 shield blocks: the X-NUCLEO-IKS01A3 is a motion MEMS and environmental sensor evaluation board system, for ST Nucleo boards.
 Blockly.Msg.X_NUCLEO_IKS01A3_Temp_Read_INPUT = "valeur de la température";

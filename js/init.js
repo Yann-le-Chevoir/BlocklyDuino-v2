@@ -153,7 +153,17 @@ Code.init = function () {
         // Code.loadBlocks(data );
         // }, 'text');
     } else {
-        Code.loadBlocks();
+        //Code.loadBlocks();
+        Code.loadBlocks(`
+        <xml xmlns="https://developers.google.com/blockly/xml">
+            <block type="RobotContainer" x="238" y="63"></block>
+            <block type="getAutonomousCommand" x="238" y="187"></block>
+            <block type="OpenPinceCommand" x="238" y="263"></block>
+            <block type="ClosePinceCommand" x="463" y="262"></block>
+            <block type="LowerBrasCommand" x="238" y="437"></block>
+            <block type="LiftBrasCommand" x="463" y="437"></block>
+        </xml>
+        `);
     }
 
     // Code.loadBlocks('');

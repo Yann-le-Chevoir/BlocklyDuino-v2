@@ -22,6 +22,9 @@ Blockly.Themes.Classic.blockStyles['commandes_pince'] = {
 Blockly.Themes.Classic.blockStyles['commandes_bras'] = {
     "colourPrimary": "#545454"
 };
+Blockly.Themes.Classic.blockStyles['subsystems'] = {
+    "colourPrimary": "#CBB01A"
+};
 Blockly.Themes.Classic.blockStyles['input_blocks'] = {
     "colourPrimary": "#B266FF"
 };

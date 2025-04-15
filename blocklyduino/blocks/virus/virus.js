@@ -1075,6 +1075,100 @@ Blockly.Blocks['Lift_Bras'] = {
     }
 };
 
+//
+Blockly.Blocks['MonteBras'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Monter le bras")
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('subsystems');
+    }
+};
+Blockly.Blocks['DescendBras'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Descendre le bras")
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('subsystems');
+    }
+};
+Blockly.Blocks['StopBras'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Stoper le bras")
+        this.setInputsInline(true);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('subsystems');
+    }
+};
+
+///
+
+Blockly.Blocks['MecanumDriveSubsystem'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Conduire la robot")
+        this.setOutput(true, intCompatibility);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('subsystems');
+    }
+};
+Blockly.Blocks['StopDriveSubsystem'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Stoper la conduite")
+        this.setOutput(true, intCompatibility);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('subsystems');
+    }
+};
+
+///
+
+Blockly.Blocks['OpenPinceSubsystem'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Ouvrir la pince")
+        this.setOutput(true, intCompatibility);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('subsystems');
+    }
+};
+Blockly.Blocks['ClosePinceSubsystem'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Fermer la pince")
+        this.setOutput(true, intCompatibility);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('subsystems');
+    }
+};
+Blockly.Blocks['StopPinceSubsystem'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Stoper la pince")
+        this.setOutput(true, intCompatibility);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('subsystems');
+    }
+};
+
 /*Blockly.Blocks['virus_ws2812b_get_frequence'] = {
     init: function () {
         this.appendDummyInput()

@@ -694,6 +694,8 @@ Blockly.Arduino['virus_capteur_son_on_capteur'] = function (block) {
 };
 
 
+
+
 Blockly.Arduino['OpenPinceCommand'] = function (block) {    
     var init = Blockly.Arduino.statementToCode(block, 'init')
     var execute = Blockly.Arduino.statementToCode(block, 'periodic')
@@ -1024,4 +1026,44 @@ Blockly.Arduino['Lower_Bras'] = function (block) {
 Blockly.Arduino['Lift_Bras'] = function (block) {
     var code = 'mLiftBrasCommand';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
+///
+
+Blockly.Arduino['MonteBras'] = function (block) {
+    var code = "mBrasSubsystem.setSpeed(1);"
+    return liste;
+};
+
+Blockly.Arduino['DescendBras'] = function (block) {
+    var code = 'mBrasSubsystem.setSpeed(-1);';
+    return code;
+};
+
+Blockly.Arduino['StopBras'] = function (block) {
+    var code = 'mBrasSubsystem.stop();';
+    return code;
+};
+
+Blockly.Arduino['MecanumDriveSubsystem'] = function (block) {
+    //var code = 'mDriveSubsystem';
+    //return code;
+};
+Blockly.Arduino['StopDriveSubsystem'] = function (block) {
+    var code = 'mDriveSubsystem.stop();';
+    return code;
+};
+
+
+Blockly.Arduino['OpenPinceSubsystem'] = function (block) {
+    var code = 'mPinceSubsystem.openPince();'
+    return code;
+};
+Blockly.Arduino['ClosePinceSubsystem'] = function (block) {
+    var code = 'mPinceSubsystem.closePince();';
+    return code;
+};
+Blockly.Arduino['StopPinceSubsystem'] = function (block) {
+    var code = 'mPinceSubsystem.stop();';
+    return code;
 };

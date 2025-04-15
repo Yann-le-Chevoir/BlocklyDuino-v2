@@ -5,8 +5,8 @@
  */
 
 var MSG = {
-    title: "BlocklyDuino Virus",
-    appName: "BlocklyDuino Virus",
+    title: "BlocklyDuino Les Dragons",
+    appName: "BlocklyDuino Les Dragons",
     blocks: "Blocs",
     prog: "Programme",
     catLogic: "💡 Logique",

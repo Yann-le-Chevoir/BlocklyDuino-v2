@@ -60,6 +60,16 @@ Blockly.Themes.Classic.categoryStyles['bras_categorie'] = {
     "colour": "#545454"
 };
 
+Blockly.Themes.Classic.categoryStyles['Bras Subsystem'] = {
+    "colour": "#CBB01A"
+};
+Blockly.Themes.Classic.categoryStyles['Drive Subsystem'] = {
+    "colour": "#CBB01A"
+};
+Blockly.Themes.Classic.categoryStyles['Pince Subsystem'] = {
+    "colour": "#CBB01A"
+};
+
 Blockly.Themes.Classic.categoryStyles['drive_categorie'] = {
     "colour": "#ff0000"
 };

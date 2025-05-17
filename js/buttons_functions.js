@@ -232,6 +232,33 @@ Code.saveXmlBlocklyFile = function () {
 };
 
 /**
+ * Load code content 
+ */
+
+saveCodeAsTxt = function () {
+    const code = editor.getValue();
+    sendFileToBackend(code);
+}
+/**
+ * Send txt to server
+ */
+
+sendFileToBackend = function(code) {
+    fetch("http://localhost:5000/run_code", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code: code }) 
+    })
+    .then(response => response.text())
+    .then(output => {
+        console.log("Sortie Python :", output);
+    })
+    .catch(error => {
+        console.error("Erreur d'envoi du fichier :", error);
+    });
+}
+
+/**
  * Load blocks from local file.
  */
 Code.loadXmlBlocklyFile = function () {

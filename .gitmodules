@@ -1,0 +1,3 @@
+[submodule "parserPythonBlocklyToJava/EV3-DragonsWPILib"]
+	path = parserPythonBlocklyToJava/EV3-DragonsWPILib
+	url = https://github.com/dragons3975/EV3-DragonsWPILib

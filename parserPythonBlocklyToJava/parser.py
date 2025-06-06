@@ -1,89 +1,123 @@
-import tkinter as tk
-from tkinter import scrolledtext, messagebox
-import re
+from flask import Flask, request
+from flask_cors import CORS
 import os
+import re
 import subprocess
+import shutil
+import threading
+import time
 
-# Nom complet de la classe principale
-MAIN_CLASS = "ev3.robot.Main"
+java_process = None
 
-def extract_files_from_text(input_text):
-    pattern = re.compile(
-        r"###(.*?)###DEBUT###(.*?)###\1###FIN###",
-        re.DOTALL
-    )
-    
+app = Flask(__name__)
+CORS(app)
+
+PROJECT_DIR = os.path.abspath("EV3-DragonsWPILib")  # Racine du projet Gradle
+
+@app.route('/run_code', methods=['POST'])
+def receive_code():
+    data = request.get_json()
+    code = data.get('code')
+
+    if not code:
+        return "Code non fourni", 400
+
+    print(">>> Code reçu\n")
+    try:
+        process_java_blocks(code)
+        build_and_run()
+        return "Compilation et exécution terminées avec succès", 200
+    except Exception as e:
+        return f"Erreur : {str(e)}", 500
+
+def process_java_blocks(input_text):
+    pattern = re.compile(r"###(.*?)###DEBUT###(.*?)###\1###FIN###", re.DOTALL)
     matches = pattern.findall(input_text)
-    
-    if not matches:
-        messagebox.showwarning("Aucun bloc trouvé", "Aucun bloc avec les délimiteurs spécifiés n'a été trouvé.")
-        return
-    
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    tmp_dir = os.path.join(base_dir, "tmp")
-    os.makedirs(tmp_dir, exist_ok=True)
 
-    java_files_relative = []
+    if not matches:
+        raise ValueError("Aucun bloc valide trouvé")
+
+    src_dir = os.path.join(PROJECT_DIR, "src", "main", "java")
+    os.makedirs(src_dir, exist_ok=True)
 
     for filename, content in matches:
         filename = filename.strip()
-        full_path = os.path.join(tmp_dir, filename)
-        
-        # Crée les sous-dossiers si nécessaires (ex: ev3/robot/)
-        os.makedirs(os.path.dirname(full_path), exist_ok=True)
-        
-        with open(full_path, 'w', encoding='utf-8') as f:
-            f.write(content.strip())
+        content = content.strip()
 
-        if filename.endswith(".java"):
-            java_files_relative.append(filename)
+        # Extraire le nom du package
+        package_match = re.search(r'^\s*package\s+([\w.]+);', content, re.MULTILINE)
+        if not package_match:
+            raise ValueError(f"Package non trouvé dans {filename}")
+        package_path = package_match.group(1).replace('.', os.sep)
 
-    if java_files_relative:
+        full_dir = os.path.join(src_dir, package_path)
+        os.makedirs(full_dir, exist_ok=True)
+
+        full_path = os.path.join(full_dir, filename)
+
+        # Remplace uniquement ce fichier, sans supprimer les autres
+        with open(full_path, "w", encoding="utf-8") as f:
+            f.write(content)
+
+        print(f"✔ Fichier mis à jour : {full_path}")
+
+def build_and_run():
+    global java_process
+
+    print("🔧 Compilation avec Gradle...")
+
+    gradlew = "gradlew.bat" if os.name == "nt" else "./gradlew"
+    gradlew_path = os.path.join(PROJECT_DIR, gradlew)
+
+    if not os.path.exists(gradlew_path):
+        raise FileNotFoundError(f"Le script Gradle '{gradlew_path}' est introuvable.")
+
+    result = subprocess.run(
+        [gradlew_path, "shadowJar"],
+        cwd=PROJECT_DIR,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+        text=True
+    )
+
+    print("=== Gradle STDOUT ===\n", result.stdout)
+    print("=== Gradle STDERR ===\n", result.stderr)
+
+    if result.returncode != 0:
+        raise RuntimeError("Gradle a échoué")
+
+    # Vérifie que le JAR a bien été généré
+    jar_path = os.path.join(PROJECT_DIR, "build", "libs", "DragonsWPILib-1.0.0-all.jar")
+    if not os.path.exists(jar_path):
+        raise FileNotFoundError(f"JAR introuvable : {jar_path}")
+
+    # 🔴 Tuer le processus précédent s'il existe
+    if java_process and java_process.poll() is None:
+        print("🛑 Arrêt de l'ancien processus Java...")
+        java_process.terminate()
         try:
-            # Compilation en gardant les chemins relatifs dans tmp/
-            compile_cmd = ["javac"] + java_files_relative
-            subprocess.run(compile_cmd, check=True, cwd=tmp_dir)
+            java_process.wait(timeout=5)
+            print("✔ Ancien processus Java terminé")
+        except subprocess.TimeoutExpired:
+            java_process.kill()
+            print("⚠️ Ancien processus Java forcé")
 
-            # Création du MANIFEST
-            manifest_content = f"Main-Class: {MAIN_CLASS}\n"
-            manifest_path = os.path.join(tmp_dir, "manifest.txt")
-            with open(manifest_path, "w") as mf:
-                mf.write(manifest_content)
+    # 🚀 Exécution du nouveau JAR
+    print("🚀 Exécution du nouveau JAR...")
+    java_process = subprocess.Popen(
+        ["java", "-jar", jar_path],
+        cwd=PROJECT_DIR,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True
+    )
 
-            # Création du .jar
-            jar_name = "mon_programme.jar"
-            jar_cmd = ["jar", "cfm", jar_name, "manifest.txt"]
+    # 🔁 Thread pour lire la sortie en temps réel
+    def read_output(proc):
+        for line in proc.stdout:
+            print("[JAVA]", line.strip())
 
-            # Ajouter tous les .class avec structure de package
-            for root, dirs, files in os.walk(tmp_dir):
-                for file in files:
-                    if file.endswith(".class"):
-                        relative_path = os.path.relpath(os.path.join(root, file), tmp_dir)
-                        jar_cmd.append(relative_path)
+    threading.Thread(target=read_output, args=(java_process,), daemon=True).start()
 
-            subprocess.run(jar_cmd, check=True, cwd=tmp_dir)
-
-            # Exécution
-            subprocess.run(["java", "-jar", jar_name], cwd=tmp_dir)
-
-            messagebox.showinfo("Succès", f"JAR exécuté avec succès : {jar_name}")
-        except subprocess.CalledProcessError as e:
-            messagebox.showerror("Erreur Java", f"Erreur compilation ou exécution du JAR.\n{e}")
-    else:
-        messagebox.showinfo("Aucun fichier Java", "Aucun fichier .java trouvé dans les blocs.")
-
-def on_submit():
-    input_text = text_area.get("1.0", tk.END)
-    extract_files_from_text(input_text)
-
-# UI
-root = tk.Tk()
-root.title("Découpeur + JAR EV3")
-
-text_area = scrolledtext.ScrolledText(root, width=100, height=30)
-text_area.pack(padx=10, pady=10)
-
-submit_button = tk.Button(root, text="Découper, compiler, créer JAR, exécuter", command=on_submit)
-submit_button.pack(pady=10)
-
-root.mainloop()
+if __name__ == '__main__':
+    app.run(port=5000)

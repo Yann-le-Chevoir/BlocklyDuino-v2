@@ -699,7 +699,7 @@ Blockly.Arduino['virus_capteur_son_on_capteur'] = function (block) {
 Blockly.Arduino['OpenPinceCommand'] = function (block) {    
     var init = Blockly.Arduino.statementToCode(block, 'init')
     var execute = Blockly.Arduino.statementToCode(block, 'periodic')
-    var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')
+    var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')?.trim() || '    return true;'
     var end = Blockly.Arduino.statementToCode(block, 'end')
 
     Blockly.Arduino.definitions_["OpenPinceCommand"] = '\n'
@@ -708,7 +708,7 @@ Blockly.Arduino['OpenPinceCommand'] = function (block) {
     + 'import edu.wpi.first.wpilibj2.command.Command;\n'
     + 'import ev3.robot.subsystems.PinceSubsystem;\n'
     + '\n'
-    + 'public class OpenPinceCommand() extends Command {\n'
+    + 'public class OpenPinceCommand extends Command {\n'
     + '\n'
     + '  private final PinceSubsystem mPinceSubsystem;\n'
     + '\n'
@@ -745,7 +745,7 @@ Blockly.Arduino['OpenPinceCommand'] = function (block) {
 Blockly.Arduino['ClosePinceCommand'] = function (block) {
     var init = Blockly.Arduino.statementToCode(block, 'init')
     var execute = Blockly.Arduino.statementToCode(block, 'periodic')
-    var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')
+    var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')?.trim() || '    return true;'
     var end = Blockly.Arduino.statementToCode(block, 'end')
 
     Blockly.Arduino.definitions_["ClosePinceCommand"] = '\n'
@@ -754,7 +754,7 @@ Blockly.Arduino['ClosePinceCommand'] = function (block) {
     + 'import edu.wpi.first.wpilibj2.command.Command;\n'
     + 'import ev3.robot.subsystems.PinceSubsystem;\n'
     + '\n'
-    + 'public class ClosePinceCommand() extends Command {\n'
+    + 'public class ClosePinceCommand extends Command {\n'
     + '\n'
     + '  private final PinceSubsystem mPinceSubsystem;\n'
     + '\n'
@@ -791,7 +791,7 @@ Blockly.Arduino['ClosePinceCommand'] = function (block) {
 Blockly.Arduino['LowerBrasCommand'] = function (block) {
     var init = Blockly.Arduino.statementToCode(block, 'init')
     var execute = Blockly.Arduino.statementToCode(block, 'periodic')
-    var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')
+    var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')?.trim() || '    return true;'
     var end = Blockly.Arduino.statementToCode(block, 'end')
 
     Blockly.Arduino.definitions_["LowerBrasCommand"] = '\n'
@@ -800,7 +800,7 @@ Blockly.Arduino['LowerBrasCommand'] = function (block) {
     + 'import edu.wpi.first.wpilibj2.command.Command;\n'
     + 'import ev3.robot.subsystems.BrasSubsystem;\n'
     + '\n'
-    + 'public class LowerBrasCommand() extends Command {\n'
+    + 'public class LowerBrasCommand extends Command {\n'
     + '\n'
     + '  private final BrasSubsystem mBrasSubsystem;\n'
     + '\n'
@@ -837,7 +837,7 @@ Blockly.Arduino['LowerBrasCommand'] = function (block) {
 Blockly.Arduino['LiftBrasCommand'] = function (block) {
     var init = Blockly.Arduino.statementToCode(block, 'init')
     var execute = Blockly.Arduino.statementToCode(block, 'periodic')
-    var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')
+    var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')?.trim() || '    return true;'
     var end = Blockly.Arduino.statementToCode(block, 'end')
 
     Blockly.Arduino.definitions_["LiftBrasCommand"] = '\n'
@@ -846,7 +846,7 @@ Blockly.Arduino['LiftBrasCommand'] = function (block) {
     + 'import edu.wpi.first.wpilibj2.command.Command;\n'
     + 'import ev3.robot.subsystems.BrasSubsystem;\n'
     + '\n'
-    + 'public class LiftBrasCommand() extends Command {\n'
+    + 'public class LiftBrasCommand extends Command {\n'
     + '\n'
     + '  private final BrasSubsystem mBrasSubsystem;\n'
     + '\n'
@@ -900,7 +900,8 @@ Blockly.Arduino['RobotContainer'] = function (block) {
     + '  public BrasSubsystem() {\n'
     + '  }\n'
     + '\n'
-    + '  @Overridepublic void periodic() {\n'
+    + '  @Override\n'
+    + '  public void periodic() {\n'
     + '    m_motorBras1.set(mSpeed);\n'
     + '    DriverStationJNI.Telemetry.putNumber("Moteur1", m_motorBras1.getTachoCount());\n'
     + '  }\n'

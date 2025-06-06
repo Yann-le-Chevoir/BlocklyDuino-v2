@@ -3,16 +3,15 @@ from flask_cors import CORS
 import os
 import re
 import subprocess
-import shutil
 import threading
 import time
-
-java_process = None
+import psutil  # pip install psutil
 
 app = Flask(__name__)
 CORS(app)
 
 PROJECT_DIR = os.path.abspath("EV3-DragonsWPILib")  # Racine du projet Gradle
+java_process = None  # Référence globale au processus Java
 
 @app.route('/run_code', methods=['POST'])
 def receive_code():
@@ -61,6 +60,17 @@ def process_java_blocks(input_text):
 
         print(f"✔ Fichier mis à jour : {full_path}")
 
+def kill_process_tree(pid):
+    try:
+        proc = psutil.Process(pid)
+        for child in proc.children(recursive=True):
+            child.kill()
+        proc.kill()
+        proc.wait(timeout=5)
+        print("✔ Processus Java complètement terminé")
+    except Exception as e:
+        print(f"⚠️ Erreur lors de la terminaison complète : {e}")
+
 def build_and_run():
     global java_process
 
@@ -94,16 +104,12 @@ def build_and_run():
     # 🔴 Tuer le processus précédent s'il existe
     if java_process and java_process.poll() is None:
         print("🛑 Arrêt de l'ancien processus Java...")
-        java_process.terminate()
-        try:
-            java_process.wait(timeout=5)
-            print("✔ Ancien processus Java terminé")
-        except subprocess.TimeoutExpired:
-            java_process.kill()
-            print("⚠️ Ancien processus Java forcé")
+        kill_process_tree(java_process.pid)
+        java_process = None
+        time.sleep(1)  # Attendre que les ports/sockets soient libérés
 
     # 🚀 Exécution du nouveau JAR
-    print("🚀 Exécution du nouveau JAR...")
+    print("🚀 Lancement du nouveau JAR...")
     java_process = subprocess.Popen(
         ["java", "-jar", jar_path],
         cwd=PROJECT_DIR,
@@ -112,7 +118,7 @@ def build_and_run():
         text=True
     )
 
-    # 🔁 Thread pour lire la sortie en temps réel
+    # 🔁 Lecture en direct des logs Java
     def read_output(proc):
         for line in proc.stdout:
             print("[JAVA]", line.strip())

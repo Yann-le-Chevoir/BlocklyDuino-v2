@@ -833,21 +833,12 @@ Blockly.Blocks['OpenPinceCommand'] = {
     init: function() {
         this.appendDummyInput()
         .appendField("commande Ouvre Pince")
-      this.appendStatementInput("init")
+      this.appendValueInput("init")
           .setCheck(null)
-          .appendField("init");
-      this.appendStatementInput("periodic")
-          .setCheck(null)
-          .appendField("periodic");
-      this.appendStatementInput("is finished")
-          .setCheck("Boolean")
-          .appendField("is finished");
-      this.appendStatementInput("end")
-          .setCheck(null)
-          .appendField("end");
-          this.setStyle("commandes_pince")
-   this.setTooltip("");
-   this.setHelpUrl("");
+          .appendField("init (commande instantannée)");
+    this.setStyle("commandes_pince")
+    this.setTooltip("");
+    this.setHelpUrl("");
     }
 };
 
@@ -855,21 +846,25 @@ Blockly.Blocks['ClosePinceCommand'] = {
     init: function() {
         this.appendDummyInput()
         .appendField("commande Ferme Pince")
-      this.appendStatementInput("init")
+    this.appendValueInput("init")
           .setCheck(null)
-          .appendField("init");
-      this.appendStatementInput("periodic")
+          .appendField("init (commande instantannée)");
+    this.setStyle("commandes_pince")
+    this.setTooltip("");
+    this.setHelpUrl("");
+    }
+};
+
+Blockly.Blocks['TogglePinceCommand'] = {
+    init: function() {
+        this.appendDummyInput()
+        .appendField("commande Toggle Pince")
+    this.appendValueInput("init")
           .setCheck(null)
-          .appendField("periodic");
-      this.appendStatementInput("is finished")
-          .setCheck("Boolean")
-          .appendField("is finished");
-      this.appendStatementInput("end")
-          .setCheck(null)
-          .appendField("end");
-          this.setStyle("commandes_pince")
-   this.setTooltip("");
-   this.setHelpUrl("");
+          .appendField("init (commande instantannée)");
+    this.setStyle("commandes_pince")
+    this.setTooltip("");
+    this.setHelpUrl("");
     }
 };
 
@@ -924,9 +919,6 @@ Blockly.Blocks['RobotContainer'] = {
       this.appendStatementInput("buttonBindings")
             .setCheck(null)
             .appendField("Définir les boutons de la manette");
-      this.appendStatementInput("defaultCommand")
-            .setCheck(null)
-            .appendField("Définir les commandes par défaut");
     this.setStyle("robotContainer")
     this.setTooltip("");
     this.setHelpUrl("");
@@ -1053,6 +1045,17 @@ Blockly.Blocks['Ferme_Pince'] = {
     }
 };
 
+Blockly.Blocks['Toggle_Pince'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Toggle Pince")
+        this.setOutput(true, intCompatibility);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('commandes_pince');
+    }
+};
+
 Blockly.Blocks['Lower_Bras'] = {
     init: function () {
         this.appendDummyInput()
@@ -1168,6 +1171,17 @@ Blockly.Blocks['StopPinceSubsystem'] = {
         this.setStyle('subsystems');
     }
 };
+Blockly.Blocks['TogglePinceSubsystem'] = {
+    init: function () {
+        this.appendDummyInput()
+                .appendField("Toggler la pince")
+        this.setOutput(true, intCompatibility);
+        this.setTooltip("");
+        this.setHelpUrl("");
+        this.setStyle('subsystems');
+    }
+};
+
 
 /*Blockly.Blocks['virus_ws2812b_get_frequence'] = {
     init: function () {

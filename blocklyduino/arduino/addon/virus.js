@@ -697,10 +697,10 @@ Blockly.Arduino['virus_capteur_son_on_capteur'] = function (block) {
 
 
 Blockly.Arduino['OpenPinceCommand'] = function (block) {    
-    var init = Blockly.Arduino.statementToCode(block, 'init')
-    var execute = Blockly.Arduino.statementToCode(block, 'periodic')
-    var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')?.trim() || '    return true;'
-    var end = Blockly.Arduino.statementToCode(block, 'end')
+    var init = Blockly.Arduino.valueToCode(this, 'init', Blockly.Arduino.ORDER_ATOMIC);
+    var execute = Blockly.Arduino.valueToCode(this, 'periodic', Blockly.Arduino.ORDER_ATOMIC);
+    //var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')?.trim() || '    return true;'
+    //var end = Blockly.Arduino.statementToCode(block, 'end')
 
     Blockly.Arduino.definitions_["OpenPinceCommand"] = '\n'
     + '###OpenPinceCommand.java###DEBUT###\n'
@@ -729,12 +729,12 @@ Blockly.Arduino['OpenPinceCommand'] = function (block) {
     + '\n'
     + '  @Override\n'
     + '  public boolean isFinished() {\n'
-    +      is_finished +'\n'
+    + '     return true;\n'
     + '  }\n'
     + '\n'
     + '  @Override\n'
     + '  public void end(boolean interrupted) {\n'
-    +      end + '\n'
+    +      '\n'
     + '  }\n'
     + '}\n'
     + '###OpenPinceCommand.java###FIN###\n';
@@ -742,11 +742,57 @@ Blockly.Arduino['OpenPinceCommand'] = function (block) {
     return '';
 };
 
+Blockly.Arduino['TogglePinceCommand'] = function (block) {    
+    var init = Blockly.Arduino.valueToCode(this, 'init', Blockly.Arduino.ORDER_ATOMIC);
+    var execute = Blockly.Arduino.valueToCode(this, 'periodic', Blockly.Arduino.ORDER_ATOMIC);
+    //var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')?.trim() || '    return true;'
+    //var end = Blockly.Arduino.statementToCode(block, 'end')
+
+    Blockly.Arduino.definitions_["TogglePinceCommand"] = '\n'
+    + '###TogglePinceCommand.java###DEBUT###\n'
+    + 'package ev3.robot.commands;\n'
+    + 'import edu.wpi.first.wpilibj2.command.Command;\n'
+    + 'import ev3.robot.subsystems.PinceSubsystem;\n'
+    + '\n'
+    + 'public class TogglePinceCommand extends Command {\n'
+    + '\n'
+    + '  private final PinceSubsystem mPinceSubsystem;\n'
+    + '\n'
+    + '  public TogglePinceCommand(PinceSubsystem pinceSubsystem) {\n'
+    + '    mPinceSubsystem = pinceSubsystem;\n'
+    + '    addRequirements(pinceSubsystem);\n'
+    + '  }\n'
+    + '\n'
+    + '  @Override\n'
+    + '  public void initialize() {\n'
+    +      init + '\n'
+    + '  }\n'
+    + '\n'
+    + '  @Override\n'
+    + '  public void execute() {\n'
+    +      execute + '\n'
+    + '  }\n'
+    + '\n'
+    + '  @Override\n'
+    + '  public boolean isFinished() {\n'
+    + '     return true;\n'
+    + '  }\n'
+    + '\n'
+    + '  @Override\n'
+    + '  public void end(boolean interrupted) {\n'
+    +      '\n'
+    + '  }\n'
+    + '}\n'
+    + '###TogglePinceCommand.java###FIN###\n';
+    
+    return '';
+};
+
 Blockly.Arduino['ClosePinceCommand'] = function (block) {
-    var init = Blockly.Arduino.statementToCode(block, 'init')
-    var execute = Blockly.Arduino.statementToCode(block, 'periodic')
-    var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')?.trim() || '    return true;'
-    var end = Blockly.Arduino.statementToCode(block, 'end')
+    var init = Blockly.Arduino.valueToCode(this, 'init', Blockly.Arduino.ORDER_ATOMIC);
+    var execute = Blockly.Arduino.valueToCode(this, 'periodic', Blockly.Arduino.ORDER_ATOMIC);
+    //var is_finished = Blockly.Arduino.statementToCode(block, 'is finished')?.trim() || '    return true;'
+    //var end = Blockly.Arduino.statementToCode(block, 'end')
 
     Blockly.Arduino.definitions_["ClosePinceCommand"] = '\n'
     + '###ClosePinceCommand.java###DEBUT###\n'
@@ -775,12 +821,12 @@ Blockly.Arduino['ClosePinceCommand'] = function (block) {
     + '\n'
     + '  @Override\n'
     + '  public boolean isFinished() {\n'
-    +      is_finished +'\n'
+    + '     return true;\n'
     + '  }\n'
     + '\n'
     + '  @Override\n'
     + '  public void end(boolean interrupted) {\n'
-    +      end + '\n'
+    +      '\n'
     + '  }\n'
     + '}\n'
     + '###ClosePinceCommand.java###FIN###\n';
@@ -882,10 +928,10 @@ Blockly.Arduino['LiftBrasCommand'] = function (block) {
 
 Blockly.Arduino['RobotContainer'] = function (block) {
     var buttonBindings = Blockly.Arduino.statementToCode(block, 'buttonBindings')
-    var defaultCommand = Blockly.Arduino.statementToCode(block, 'defaultCommand')
+    //var defaultCommand = Blockly.Arduino.statementToCode(block, 'defaultCommand')
 
     Blockly.Arduino.definitions_["RobotContainer"] = '\n'
-    + '###BrasSubsystem.java###DEBUT###\n'
+    /*+ '###BrasSubsystem.java###DEBUT###\n'
     + 'package ev3.robot.subsystems;\n'
     + 'import dragons.ev3.ArduinoCRServo;\n'
     + 'import dragons.ev3.ArduinoMotor;\n'
@@ -915,7 +961,7 @@ Blockly.Arduino['RobotContainer'] = function (block) {
     + '\n'
     + '}\n'
     + '###BrasSubsystem.java###FIN###\n'
-    + '\n'
+    + '\n'*/
     + '###RobotContainer.java###DEBUT###\n'
     + 'package ev3.robot;\n'
     + 'import edu.wpi.first.wpilibj.XboxController;\n'
@@ -929,6 +975,7 @@ Blockly.Arduino['RobotContainer'] = function (block) {
     + 'import ev3.robot.commands.ClosePinceCommand;\n'
     + 'import ev3.robot.commands.LiftBrasCommand;\n'
     + 'import ev3.robot.commands.LowerBrasCommand;\n'
+    + 'import ev3.robot.commands.TogglePinceCommand;\n'
     + 'import ev3.robot.subsystems.BrasSubsystem;\n'
     + 'import ev3.robot.subsystems.PinceSubsystem;\n'
     + 'import ev3.robot.subsystems.DriveSubsystem;\n'
@@ -943,6 +990,7 @@ Blockly.Arduino['RobotContainer'] = function (block) {
     + '  private final ClosePinceCommand mClosePinceCommand = new ClosePinceCommand(mPinceSubsystem);\n'
     + '  private final LiftBrasCommand mLiftBrasCommand = new LiftBrasCommand(mBrasSubsystem);\n'
     + '  private final LowerBrasCommand mLowerBrasCommand = new LowerBrasCommand(mBrasSubsystem);\n'
+    + '  private final TogglePinceCommand mTogglePinceCommand = new TogglePinceCommand(mPinceSubsystem);\n'
     + '  private final AutonomousCommandGroup mAutonomousCommandGroup;\n'
     + '\n'
     + '  public RobotContainer() {\n'
@@ -956,7 +1004,7 @@ Blockly.Arduino['RobotContainer'] = function (block) {
     + '  }\n'
     + '\n'
     + '  private void configureDefaultCommands() {\n'
-    +      defaultCommand +'\n'
+    + '     mDriveSubsystem.setDefaultCommand(mDriveCommand);\n'
     + '  }\n'
     + '\n'
     + '  public Command getAutonomousCommand() {\n'
@@ -1014,6 +1062,11 @@ Blockly.Arduino['Ouvre_Pince'] = function (block) {
     return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 
+Blockly.Arduino['Toggle_Pince'] = function (block) {
+    var code = 'mTogglePinceCommand';
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+
 Blockly.Arduino['Ferme_Pince'] = function (block) {
     var code = 'mClosePinceCommand';
     return [code, Blockly.Arduino.ORDER_ATOMIC];
@@ -1058,13 +1111,17 @@ Blockly.Arduino['StopDriveSubsystem'] = function (block) {
 
 Blockly.Arduino['OpenPinceSubsystem'] = function (block) {
     var code = 'mPinceSubsystem.openPince();'
-    return code;
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 Blockly.Arduino['ClosePinceSubsystem'] = function (block) {
     var code = 'mPinceSubsystem.closePince();';
-    return code;
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
 Blockly.Arduino['StopPinceSubsystem'] = function (block) {
     var code = 'mPinceSubsystem.stop();';
-    return code;
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
+Blockly.Arduino['TogglePinceSubsystem'] = function (block) {
+    var code = 'mPinceSubsystem.togglePince();';
+    return [code, Blockly.Arduino.ORDER_ATOMIC];
 };
